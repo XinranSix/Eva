@@ -1,0 +1,10 @@
+^C:\USERS\YAOJIE\DESKTOP\TEST\BUILD\CMAKEFILES\71C8EFC096B07AB1B865F320D559B597\GENERATE.STAMP.RULE
+setlocal
+D:\software\cmake\bin\cmake.exe -SC:/Users/yaojie/Desktop/test -BC:/Users/yaojie/Desktop/test/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/yaojie/Desktop/test/build/GameEnign.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
