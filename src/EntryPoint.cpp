@@ -10,7 +10,7 @@
 #include "Application.h"
 #include "Log.h"
 
-extern GameEngine::Application *GameEngine::CreateApplication();
+// extern GameEngine::Application *GameEngine::CreateApplication();
 
 int main(int argc, char *argv[]) {
     GameEngine::Log::Init();

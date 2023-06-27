@@ -1,0 +1,21 @@
+[
+{
+  "directory": "c:\\Users\\yaojie\\Desktop\\GameEngine",
+  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\main\\windows\\x64\\release\\src\\Application.cpp.obj", "src\\Application.cpp"],
+  "file": "src\\Application.cpp"
+},
+{
+  "directory": "c:\\Users\\yaojie\\Desktop\\GameEngine",
+  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\main\\windows\\x64\\release\\src\\EntryPoint.cpp.obj", "src\\EntryPoint.cpp"],
+  "file": "src\\EntryPoint.cpp"
+},
+{
+  "directory": "c:\\Users\\yaojie\\Desktop\\GameEngine",
+  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\main\\windows\\x64\\release\\src\\Log.cpp.obj", "src\\Log.cpp"],
+  "file": "src\\Log.cpp"
+},
+{
+  "directory": "c:\\Users\\yaojie\\Desktop\\GameEngine",
+  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\main\\windows\\x64\\release\\src\\SandBoxApp.cpp.obj", "src\\SandBoxApp.cpp"],
+  "file": "src\\SandBoxApp.cpp"
+}]
