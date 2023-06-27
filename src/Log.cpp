@@ -8,7 +8,7 @@
 #include "Log.h"
 #include <spdlog/sinks/stdout_color_sinks.h>
 
-namespace GameEngine {
+namespace Eva {
 
     void Log::Init() {
         spdlog::set_pattern("%^[%T] %n: %v%$");

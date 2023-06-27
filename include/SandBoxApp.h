@@ -8,7 +8,7 @@
 #pragma once
 #include "./Application.h"
 
-class SandBox : public GameEngine::Application {
+class SandBox : public Eva::Application {
 public:
     SandBox();
     ~SandBox();

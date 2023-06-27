@@ -7,7 +7,7 @@
 
 #pragma once
 
-namespace GameEngine {
+namespace Eva {
     class Application {
     public:
         Application();

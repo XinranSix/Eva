@@ -10,7 +10,7 @@
 
 class SandBox;
 
-namespace GameEngine {
+namespace Eva {
 
     Application::Application() {}
 
@@ -20,5 +20,5 @@ namespace GameEngine {
         while (true)
             ;
     }
-    GameEngine::Application *CreateApplication() { return new SandBox(); }
+    Eva::Application *CreateApplication() { return new SandBox(); }
 } // namespace GameEngine
