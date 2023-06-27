@@ -9,7 +9,6 @@
 
 #include "Application.h"
 #include "Log.h"
-#include <cstdio>
 
 extern GameEngine::Application *GameEngine::CreateApplication();
 
