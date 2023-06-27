@@ -14,9 +14,9 @@
 
 int main(int argc, char *argv[]) {
     Eva::Log::Init();
-    GE_CORE_WARN("Initialized Log!");
+    EVA_CORE_WARN("Initialized Log!");
     int a = 5;
-    GE_INFO("Hello! Var={0}", a);
+    EVA_INFO("Hello! Var={0}", a);
 
     auto app = Eva::CreateApplication();
     app->Run();

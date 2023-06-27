@@ -30,15 +30,15 @@ namespace Eva {
 } // namespace GameEngine
 
 // Core Log 宏
-#define GE_CORE_TRACE(...) ::Eva::Log::GetCoreLogger()->trace(__VA_ARGS__)
-#define GE_CORE_INFO(...) ::Eva::Log::GetCoreLogger()->info(__VA_ARGS__)
-#define GE_CORE_WARN(...) ::Eva::Log::GetCoreLogger()->warn(__VA_ARGS__)
-#define GE_CORE_ERROE(...) ::Eva::Log::GetCoreLogger()->error(__VA_ARGS__)
-#define GE_CORE_FATAL(...) ::Eva::Log::GetCoreLogger()->fatal(__VA_ARGS__)
+#define EVA_CORE_TRACE(...) ::Eva::Log::GetCoreLogger()->trace(__VA_ARGS__)
+#define EVA_CORE_INFO(...) ::Eva::Log::GetCoreLogger()->info(__VA_ARGS__)
+#define EVA_CORE_WARN(...) ::Eva::Log::GetCoreLogger()->warn(__VA_ARGS__)
+#define EVA_CORE_ERROE(...) ::Eva::Log::GetCoreLogger()->error(__VA_ARGS__)
+#define EVA_CORE_CRITICAL(...) ::Eva::Log::GetCoreLogger()->critical(__VA_ARGS__)
 
 // Client Log 宏
-#define GE_TRACE(...) ::Eva::Log::GetClientLogger()->trace(__VA_ARGS__)
-#define GE_INFO(...) ::Eva::Log::GetClientLogger()->info(__VA_ARGS__)
-#define GE_WARN(...) ::Eva::Log::GetClientLogger()->warn(__VA_ARGS__)
-#define GE_ERROE(...) ::Eva::Log::GetClientLogger()->error(__VA_ARGS__)
-#define GE_FATAL(...) ::Eva::Log::GetClientLogger()->fatal(__VA_ARGS__)
+#define EVA_TRACE(...) ::Eva::Log::GetClientLogger()->trace(__VA_ARGS__)
+#define EVA_INFO(...) ::Eva::Log::GetClientLogger()->info(__VA_ARGS__)
+#define EVA_WARN(...) ::Eva::Log::GetClientLogger()->warn(__VA_ARGS__)
+#define EVA_ERROE(...) ::Eva::Log::GetClientLogger()->error(__VA_ARGS__)
+#define EVA_CRITICAL(...) ::Eva::Log::GetClientLogger()->critical(__VA_ARGS__)
