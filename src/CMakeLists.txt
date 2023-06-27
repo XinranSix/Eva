@@ -1,3 +1,1 @@
-add_executable(main main.cpp glad.c)
-
-target_link_libraries(main glfw3.dll)
+add_executable(main EntryPoint.cpp Application.cpp SandBoxApp.cpp)

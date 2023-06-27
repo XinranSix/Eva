@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/yaojie/Desktop/test/src
+# Install script for directory: D:/workspace/MyRepositories/GameEngine/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/LearnOpenGL")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files/GameEngine")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

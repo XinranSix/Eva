@@ -25,7 +25,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{653EC76F-E6FF-33CC-A45C-24B127D28C08}</ProjectGuid>
+    <ProjectGuid>{0CEDDAFB-A8F5-3599-ACA8-03B4607FC7E2}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -69,7 +69,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\yaojie\Desktop\test\.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\workspace\MyRepositories\GameEngine\.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -79,7 +79,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\yaojie\Desktop\test\.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\workspace\MyRepositories\GameEngine\.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -89,7 +89,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\yaojie\Desktop\test\.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\workspace\MyRepositories\GameEngine\.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -99,7 +99,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\yaojie\Desktop\test\.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\workspace\MyRepositories\GameEngine\.\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -108,11 +108,11 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\yaojie\Desktop\test\CMakeLists.txt">
+    <CustomBuild Include="D:\workspace\MyRepositories\GameEngine\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/yaojie/Desktop/test/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/workspace/MyRepositories/GameEngine/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-D:\software\cmake\bin\cmake.exe -SC:/Users/yaojie/Desktop/test -BC:/Users/yaojie/Desktop/test/build --check-stamp-file C:/Users/yaojie/Desktop/test/build/CMakeFiles/generate.stamp
+D:\software\cmake\bin\cmake.exe -SD:/workspace/MyRepositories/GameEngine -BD:/workspace/MyRepositories/GameEngine/build --check-stamp-file D:/workspace/MyRepositories/GameEngine/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -120,12 +120,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\yaojie\Desktop\test\build\CMakeFiles\3.26.3\CMakeCCompiler.cmake;C:\Users\yaojie\Desktop\test\build\CMakeFiles\3.26.3\CMakeCXXCompiler.cmake;C:\Users\yaojie\Desktop\test\build\CMakeFiles\3.26.3\CMakeRCCompiler.cmake;C:\Users\yaojie\Desktop\test\build\CMakeFiles\3.26.3\CMakeSystem.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\yaojie\Desktop\test\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\software\cmake\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;D:\workspace\MyRepositories\GameEngine\build\CMakeFiles\3.26.3\CMakeCCompiler.cmake;D:\workspace\MyRepositories\GameEngine\build\CMakeFiles\3.26.3\CMakeCXXCompiler.cmake;D:\workspace\MyRepositories\GameEngine\build\CMakeFiles\3.26.3\CMakeRCCompiler.cmake;D:\workspace\MyRepositories\GameEngine\build\CMakeFiles\3.26.3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\workspace\MyRepositories\GameEngine\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/yaojie/Desktop/test/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/workspace/MyRepositories/GameEngine/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-D:\software\cmake\bin\cmake.exe -SC:/Users/yaojie/Desktop/test -BC:/Users/yaojie/Desktop/test/build --check-stamp-file C:/Users/yaojie/Desktop/test/build/CMakeFiles/generate.stamp
+D:\software\cmake\bin\cmake.exe -SD:/workspace/MyRepositories/GameEngine -BD:/workspace/MyRepositories/GameEngine/build --check-stamp-file D:/workspace/MyRepositories/GameEngine/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -133,12 +133,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\yaojie\Desktop\test\build\CMakeFiles\3.26.3\CMakeCCompiler.cmake;C:\Users\yaojie\Desktop\test\build\CMakeFiles\3.26.3\CMakeCXXCompiler.cmake;C:\Users\yaojie\Desktop\test\build\CMakeFiles\3.26.3\CMakeRCCompiler.cmake;C:\Users\yaojie\Desktop\test\build\CMakeFiles\3.26.3\CMakeSystem.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\yaojie\Desktop\test\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\software\cmake\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;D:\workspace\MyRepositories\GameEngine\build\CMakeFiles\3.26.3\CMakeCCompiler.cmake;D:\workspace\MyRepositories\GameEngine\build\CMakeFiles\3.26.3\CMakeCXXCompiler.cmake;D:\workspace\MyRepositories\GameEngine\build\CMakeFiles\3.26.3\CMakeRCCompiler.cmake;D:\workspace\MyRepositories\GameEngine\build\CMakeFiles\3.26.3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\workspace\MyRepositories\GameEngine\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/yaojie/Desktop/test/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/workspace/MyRepositories/GameEngine/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-D:\software\cmake\bin\cmake.exe -SC:/Users/yaojie/Desktop/test -BC:/Users/yaojie/Desktop/test/build --check-stamp-file C:/Users/yaojie/Desktop/test/build/CMakeFiles/generate.stamp
+D:\software\cmake\bin\cmake.exe -SD:/workspace/MyRepositories/GameEngine -BD:/workspace/MyRepositories/GameEngine/build --check-stamp-file D:/workspace/MyRepositories/GameEngine/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -146,12 +146,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\yaojie\Desktop\test\build\CMakeFiles\3.26.3\CMakeCCompiler.cmake;C:\Users\yaojie\Desktop\test\build\CMakeFiles\3.26.3\CMakeCXXCompiler.cmake;C:\Users\yaojie\Desktop\test\build\CMakeFiles\3.26.3\CMakeRCCompiler.cmake;C:\Users\yaojie\Desktop\test\build\CMakeFiles\3.26.3\CMakeSystem.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\yaojie\Desktop\test\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\software\cmake\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;D:\workspace\MyRepositories\GameEngine\build\CMakeFiles\3.26.3\CMakeCCompiler.cmake;D:\workspace\MyRepositories\GameEngine\build\CMakeFiles\3.26.3\CMakeCXXCompiler.cmake;D:\workspace\MyRepositories\GameEngine\build\CMakeFiles\3.26.3\CMakeRCCompiler.cmake;D:\workspace\MyRepositories\GameEngine\build\CMakeFiles\3.26.3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\workspace\MyRepositories\GameEngine\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/yaojie/Desktop/test/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/workspace/MyRepositories/GameEngine/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-D:\software\cmake\bin\cmake.exe -SC:/Users/yaojie/Desktop/test -BC:/Users/yaojie/Desktop/test/build --check-stamp-file C:/Users/yaojie/Desktop/test/build/CMakeFiles/generate.stamp
+D:\software\cmake\bin\cmake.exe -SD:/workspace/MyRepositories/GameEngine -BD:/workspace/MyRepositories/GameEngine/build --check-stamp-file D:/workspace/MyRepositories/GameEngine/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -159,22 +159,22 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\yaojie\Desktop\test\build\CMakeFiles\3.26.3\CMakeCCompiler.cmake;C:\Users\yaojie\Desktop\test\build\CMakeFiles\3.26.3\CMakeCXXCompiler.cmake;C:\Users\yaojie\Desktop\test\build\CMakeFiles\3.26.3\CMakeRCCompiler.cmake;C:\Users\yaojie\Desktop\test\build\CMakeFiles\3.26.3\CMakeSystem.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\yaojie\Desktop\test\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\software\cmake\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\software\cmake\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\software\cmake\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\software\cmake\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;D:\workspace\MyRepositories\GameEngine\build\CMakeFiles\3.26.3\CMakeCCompiler.cmake;D:\workspace\MyRepositories\GameEngine\build\CMakeFiles\3.26.3\CMakeCXXCompiler.cmake;D:\workspace\MyRepositories\GameEngine\build\CMakeFiles\3.26.3\CMakeRCCompiler.cmake;D:\workspace\MyRepositories\GameEngine\build\CMakeFiles\3.26.3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\workspace\MyRepositories\GameEngine\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\yaojie\Desktop\test\build\ZERO_CHECK.vcxproj">
-      <Project>{F0552EFA-9D88-3DC6-9B68-FEDFFAF6F95A}</Project>
+    <ProjectReference Include="D:\workspace\MyRepositories\GameEngine\build\ZERO_CHECK.vcxproj">
+      <Project>{9FC9A002-A424-33DC-A869-C519ACDA751D}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\yaojie\Desktop\test\build\src\main.vcxproj">
-      <Project>{2353D052-0405-388B-AED3-B62A6B461335}</Project>
+    <ProjectReference Include="D:\workspace\MyRepositories\GameEngine\build\src\main.vcxproj">
+      <Project>{62CCA07D-D88A-3FAA-B01A-B1450075F355}</Project>
       <Name>main</Name>
     </ProjectReference>
   </ItemGroup>

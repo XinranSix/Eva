@@ -2,10 +2,10 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\yaojie\Desktop\test\build\x64\Debug\ZERO_CHECK</FullPath>
+      <FullPath>D:\workspace\MyRepositories\GameEngine\build\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\yaojie\Desktop\test\bin\Debug\main.exe</FullPath>
+      <FullPath>D:\workspace\MyRepositories\GameEngine\bin\Debug\main.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

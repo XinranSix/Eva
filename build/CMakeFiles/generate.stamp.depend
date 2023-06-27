@@ -1,9 +1,4 @@
 # CMake generation dependency list for this directory.
-C:/Users/yaojie/Desktop/test/CMakeLists.txt
-C:/Users/yaojie/Desktop/test/build/CMakeFiles/3.26.3/CMakeCCompiler.cmake
-C:/Users/yaojie/Desktop/test/build/CMakeFiles/3.26.3/CMakeCXXCompiler.cmake
-C:/Users/yaojie/Desktop/test/build/CMakeFiles/3.26.3/CMakeRCCompiler.cmake
-C:/Users/yaojie/Desktop/test/build/CMakeFiles/3.26.3/CMakeSystem.cmake
 D:/software/cmake/share/cmake-3.26/Modules/CMakeCInformation.cmake
 D:/software/cmake/share/cmake-3.26/Modules/CMakeCXXInformation.cmake
 D:/software/cmake/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake
@@ -22,3 +17,8 @@ D:/software/cmake/share/cmake-3.26/Modules/Platform/Windows-MSVC-CXX.cmake
 D:/software/cmake/share/cmake-3.26/Modules/Platform/Windows-MSVC.cmake
 D:/software/cmake/share/cmake-3.26/Modules/Platform/Windows.cmake
 D:/software/cmake/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake
+D:/workspace/MyRepositories/GameEngine/CMakeLists.txt
+D:/workspace/MyRepositories/GameEngine/build/CMakeFiles/3.26.3/CMakeCCompiler.cmake
+D:/workspace/MyRepositories/GameEngine/build/CMakeFiles/3.26.3/CMakeCXXCompiler.cmake
+D:/workspace/MyRepositories/GameEngine/build/CMakeFiles/3.26.3/CMakeRCCompiler.cmake
+D:/workspace/MyRepositories/GameEngine/build/CMakeFiles/3.26.3/CMakeSystem.cmake
