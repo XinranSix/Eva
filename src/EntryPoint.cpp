@@ -8,12 +8,17 @@
 #pragma once
 
 #include "Application.h"
+#include "Log.h"
 #include <cstdio>
 
 extern GameEngine::Application *GameEngine::CreateApplication();
 
 int main(int argc, char *argv[]) {
-    printf("Game Engigen\n");
+    GameEngine::Log::Init();
+    GE_CORE_WARN("Initialized Log!");
+    int a = 5;
+    GE_INFO("Hello! Var={0}", a);
+
     auto app = GameEngine::CreateApplication();
     app->Run();
     delete app;

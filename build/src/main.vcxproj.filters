@@ -10,6 +10,9 @@
     <ClCompile Include="D:\workspace\MyRepositories\GameEngine\src\SandBoxApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\workspace\MyRepositories\GameEngine\src\Log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\workspace\MyRepositories\GameEngine\src\CMakeLists.txt" />
