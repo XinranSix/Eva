@@ -9,6 +9,7 @@
 
 #include "Event.h"
 #include "eva/MouseCodes.h"
+#include <sstream>
 
 namespace Eva {
 
@@ -93,4 +94,4 @@ namespace Eva {
         EVENT_CLASS_TYPE(MouseButtonReleased)
     };
 
-} // namespace Hazel
+} // namespace Eva
