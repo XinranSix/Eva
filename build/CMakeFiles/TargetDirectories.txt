@@ -1,0 +1,3 @@
+D:/workspace/MyRepositories/GameEngine/build/CMakeFiles/ALL_BUILD.dir
+D:/workspace/MyRepositories/GameEngine/build/CMakeFiles/ZERO_CHECK.dir
+D:/workspace/MyRepositories/GameEngine/build/src/CMakeFiles/main.dir

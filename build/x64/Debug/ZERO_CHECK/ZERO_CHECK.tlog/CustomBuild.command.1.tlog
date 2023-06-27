@@ -1,0 +1,10 @@
+^D:\WORKSPACE\MYREPOSITORIES\GAMEENGINE\BUILD\CMAKEFILES\3011934FB3F7CEB68F59C16129CC5FF5\GENERATE.STAMP.RULE
+setlocal
+D:\software\cmake\bin\cmake.exe -SD:/workspace/MyRepositories/GameEngine -BD:/workspace/MyRepositories/GameEngine/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/workspace/MyRepositories/GameEngine/build/GameEngine.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
