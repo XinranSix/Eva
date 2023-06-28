@@ -7,6 +7,11 @@
 
 #pragma once
 
+#include "Window.h"
+#include "eva/eva.h"
+#include <memory>
+#include "ApplicationEvent.h"
+
 namespace Eva {
     class Application {
     public:
@@ -14,8 +19,16 @@ namespace Eva {
         virtual ~Application();
 
         void Run();
+
+        void OnEvent(Event &e);
+
+    private:
+        bool OnWindownClose(WindowCloseEvent &e);
+
+        std::unique_ptr<Window> m_Window;
+        bool m_Running = true;
     };
 
     Application *CreateApplication();
 
-} // namespace GameEngine
+} // namespace Eva
