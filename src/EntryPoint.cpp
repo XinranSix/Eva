@@ -3,9 +3,8 @@
  * @date    :   2023/06/27 14:18:24
  * @author  :   yaojie
  * @version :   1.0
+ * Engin Entry Point
  */
-
-#pragma once
 
 #include "Application.h"
 #include "Log.h"

@@ -10,7 +10,7 @@
 #include "ApplicationEvent.h"
 #include "Log.h"
 
-class SandBox;
+// class SandBox;
 
 namespace Eva {
 
