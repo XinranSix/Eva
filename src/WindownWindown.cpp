@@ -5,10 +5,12 @@
  * @version :   1.0
  */
 
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+
 #include "WindowWindow.h"
 #include "Log.h"
 #include "eva/Assert.h"
-#include <GLFW/glfw3.h>
 #include "KeyEvent.h"
 #include "MouseEvent.h"
 #include "ApplicationEvent.h"
@@ -46,6 +48,8 @@ namespace Eva {
         m_Window = glfwCreateWindow((int)props.Width, (int)props.Height,
                                     m_Data.Title.c_str(), nullptr, nullptr);
         glfwMakeContextCurrent(m_Window);
+        int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+        EVA_CORE_ASSERT(status, "Failed to initailize Glad!");
         glfwSetWindowUserPointer(m_Window, &m_Data);
         SetVSync(true);
 
@@ -124,6 +128,7 @@ namespace Eva {
     void WindowWindow::Shutdown() { glfwDestroyWindow(m_Window); }
 
     void WindowWindow::OnUpdate() {
+
         glfwPollEvents();
         glfwSwapBuffers(m_Window);
     }

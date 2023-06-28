@@ -11,6 +11,8 @@
 #include "eva/eva.h"
 #include <memory>
 #include "ApplicationEvent.h"
+#include "Layer.h"
+#include "LayerStack.h"
 
 namespace Eva {
     class Application {
@@ -22,11 +24,17 @@ namespace Eva {
 
         void OnEvent(Event &e);
 
+        void PushLayer(Layer *layer);
+        void PushOverlay(Layer *layer);
+
     private:
         bool OnWindownClose(WindowCloseEvent &e);
 
         std::unique_ptr<Window> m_Window;
         bool m_Running = true;
+
+    private:
+        LayerStack m_LayerStack;
     };
 
     Application *CreateApplication();

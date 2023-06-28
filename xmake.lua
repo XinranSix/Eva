@@ -1,11 +1,7 @@
 add_rules("mode.debug", "mode.release")
 
 add_linkdirs("./lib")
- add_includedirs("./include")
--- set_languages("cxx17")
-
--- add_cxxflags("msvc::utf-8")
--- add_cflags("msvc::utf-8")
+add_includedirs("./include")
 
 target("main")
     set_kind("binary")

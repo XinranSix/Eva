@@ -8,6 +8,6 @@
 #include "Application.h"
 #include "SandBoxApp.h"
 
-SandBox::SandBox() {}
+SandBox::SandBox(){ PushLayer(new ExampleLayer()); }
 
 SandBox::~SandBox() {}

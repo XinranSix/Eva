@@ -8,12 +8,12 @@
 #include "Application.h"
 #include "SandBoxApp.h"
 // #include "ApplicationEvent.h"
-#include "Log.h"
+// #include "Log.h"
 #include <memory>
 
-// #include <glad/glad.h>
+#include <glad/glad.h>
 
-#include <GLFW/glfw3.h>
+// #include <GLFW/glfw3.h>
 
 // class SandBox;
 
@@ -32,14 +32,37 @@ namespace Eva {
         EventDispatcher dispatcher(e);
         dispatcher.Dispatch<WindowCloseEvent>(
             BIND_EVENT_FN(Application::OnWindownClose));
-        EVA_CORE_TRACE("{0}", e.ToString());
+
+        for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();) {
+            (*--it)->OnEvent(e);
+            if (e.Handled) {
+                break;
+            }
+        }
+    }
+
+    void Application::PushLayer(Layer *layer) {
+        // HZ_PROFILE_FUNCTION();
+
+        m_LayerStack.PushLayer(layer);
+        // layer->OnAttach();
+    }
+
+    void Application::PushOverlay(Layer *layer) {
+        // HZ_PROFILE_FUNCTION();
+
+        m_LayerStack.PushOverlay(layer);
+        // layer->OnAttach();
     }
 
     void Application::Run() {
 
         while (m_Running) {
-            // glClearColor(1, 0, 1, 1);
-            // glClear(GL_COLOR_BUFFER_BIT);
+            glClearColor(0.77, 0.44, 0.55, 1);
+            glClear(GL_COLOR_BUFFER_BIT);
+            for (Layer *layer : m_LayerStack) {
+                layer->OnUpdate();
+            }
             m_Window->OnUpdate();
         }
     }
