@@ -7,7 +7,11 @@
 
 #include "Application.h"
 #include "SandBoxApp.h"
+#include "ImGuiLayer.h"
 
-SandBox::SandBox(){ PushLayer(new ExampleLayer()); }
+SandBox::SandBox() {
+    PushLayer(new ExampleLayer());
+    PushOverlay(new Eva::ImGuiLayer());
+}
 
 SandBox::~SandBox() {}
