@@ -10,6 +10,7 @@
 // #include "ApplicationEvent.h"
 // #include "Log.h"
 #include "eva/Assert.h"
+#include "Input.h"
 
 #include <memory>
 
@@ -67,6 +68,8 @@ namespace Eva {
             for (Layer *layer : m_LayerStack) {
                 layer->OnUpdate();
             }
+            auto [x, y] = Input::GetMousePosition();
+            EVA_CORE_TRACE("{0}, {1}", x, y);
             m_Window->OnUpdate();
         }
     }

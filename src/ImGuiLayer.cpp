@@ -10,7 +10,7 @@
 
 #include "ImGuiLayer.h"
 #include "imgui.h"
-#include "imgui_impl_glfw.h"
+// #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 #include "Application.h"
 #include "eva/Core.h"
@@ -130,10 +130,10 @@ namespace Eva {
     bool ImGuiLayer::OnKeyTypedEvent(KeyTypedEvent &e) {
         ImGuiIO &io = ImGui::GetIO();
         int keycode = e.GetKeyCode();
-        io.AddInputCharacter((unsigned int)keycode);
-        // if (keycode > 0 && keycode < 0x10000) {
-        //     io.AddInputCharacter((unsigned int)keycode);
-        // }
+        // io.AddInputCharacter((unsigned int)keycode);
+        if (keycode > 0 && keycode < 0x10000) {
+            io.AddInputCharacter((unsigned int)keycode);
+        }
         return false;
     }
 
