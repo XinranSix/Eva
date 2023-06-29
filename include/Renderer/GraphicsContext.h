@@ -15,8 +15,3 @@ namespace Eva {
         virtual void SwapBuffers() = 0;
     };
 } // namespace Eva
-
-
-//   glfwMakeContextCurrent(m_Window);
-//         int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-//         EVA_CORE_ASSERT(status, "Failed to initailize Glad!");

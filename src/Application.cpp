@@ -65,8 +65,10 @@ namespace Eva {
 
     void Application::Run() {
         while (m_Running) {
+
             glClearColor(0.73f, 0.48f, 0.69f, 1.00f);
             glClear(GL_COLOR_BUFFER_BIT);
+
             for (Layer *layer : m_LayerStack) {
                 layer->OnUpdate();
             }

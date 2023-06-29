@@ -138,9 +138,7 @@ namespace Eva {
     void WindowWindow::OnUpdate() {
 
         glfwPollEvents();
-        // TODO: 添加上下文代码
         m_Context->SwapBuffers();
-        glfwSwapBuffers(m_Window);
     }
 
     void WindowWindow::SetVSync(bool enabled) {
