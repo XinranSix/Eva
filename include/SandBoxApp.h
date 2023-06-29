@@ -6,20 +6,37 @@
  */
 
 #pragma once
+
 #include "./Application.h"
 #include "Layer.h"
 #include "Log.h"
 #include "LayerStack.h"
+#include "Input.h"
+#include "KeyCodes.h"
+#include "Event.h"
+#include "ApplicationEvent.h"
+#include "KeyEvent.h"
 
 // FIXME:示例 Layer
 class ExampleLayer : public Eva::Layer {
 public:
     ExampleLayer() : Layer("Example") {}
 
-    void OnUpdate() override { EVA_INFO("ExampleLayer::Update"); }
+    void OnUpdate() override {
+        // EVA_INFO("ExampleLayer::Update");
+        if (Eva::Input::IsKeyPressed(EVA_KEY_TAB)) {
+            EVA_TRACE("Tab key is pressed (poll)!");
+        }
+    }
 
     void OnEvent(Eva::Event &event) override {
-        EVA_CORE_TRACE("{0}", event.ToString());
+        if (event.GetEventType() == Eva::EventType::KeyPressed) {
+            Eva::KeyPressedEvent &e = (Eva::KeyPressedEvent &)event;
+            if (e.GetKeyCode() == EVA_KEY_TAB) {
+                EVA_TRACE("Tab key is pressed (event)!");
+            }
+            EVA_TRACE("{0}", (char)e.GetKeyCode());
+        }
     }
 };
 

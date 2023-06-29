@@ -63,13 +63,14 @@ namespace Eva {
 
     void Application::Run() {
         while (m_Running) {
-            glClearColor(0.77, 0.44, 0.55, 1);
+            glClearColor(0.73f, 0.48f, 0.69f, 1.00f);
             glClear(GL_COLOR_BUFFER_BIT);
             for (Layer *layer : m_LayerStack) {
                 layer->OnUpdate();
             }
-            auto [x, y] = Input::GetMousePosition();
-            EVA_CORE_TRACE("{0}, {1}", x, y);
+            // auto [x, y] = Input::GetMousePosition();
+            // EVA_CORE_TRACE("{0}, {1}", x, y);
+
             m_Window->OnUpdate();
         }
     }
