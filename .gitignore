@@ -9,6 +9,7 @@
 /**/.vs
 /**/*.local
 /**/*.log
+/**/*.xmake
 
 /**/npm-debug.log*
 /**/yarn-debug.log*
