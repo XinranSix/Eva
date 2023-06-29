@@ -16,6 +16,7 @@
 #include "Event.h"
 #include "ApplicationEvent.h"
 #include "KeyEvent.h"
+#include "imgui.h"
 
 // FIXME:示例 Layer
 class ExampleLayer : public Eva::Layer {
@@ -27,6 +28,12 @@ public:
         if (Eva::Input::IsKeyPressed(EVA_KEY_TAB)) {
             EVA_TRACE("Tab key is pressed (poll)!");
         }
+    }
+
+    void OnImGuiRender() override {
+        // ImGui::Begin("Test");
+        // ImGui::Text("Hello World");
+        // ImGui::End();
     }
 
     void OnEvent(Eva::Event &event) override {

@@ -13,6 +13,7 @@
 #include "ApplicationEvent.h"
 #include "Layer.h"
 #include "LayerStack.h"
+#include "ImGuiLayer.h"
 
 namespace Eva {
     class Application {
@@ -28,13 +29,14 @@ namespace Eva {
         void PushOverlay(Layer *layer);
 
         inline Window &GetWindow() { return *m_Window; }
-        
+
         static inline Application &Get() { return *s_Instance; }
 
     private:
         bool OnWindownClose(WindowCloseEvent &e);
 
         std::unique_ptr<Window> m_Window;
+        ImGuiLayer *m_ImGuiLayer;
         bool m_Running = true;
         LayerStack m_LayerStack;
 
