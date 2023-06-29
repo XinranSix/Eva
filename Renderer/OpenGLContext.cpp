@@ -10,6 +10,7 @@
 
 #include "Renderer/OpenGLContext.h"
 #include "eva/Assert.h"
+#include "Log.h"
 
 namespace Eva {
 
@@ -22,6 +23,12 @@ namespace Eva {
         glfwMakeContextCurrent(m_WindowHandle);
         int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
         EVA_CORE_ASSERT(status, "Failed to initailize Glad!");
+
+        EVA_CORE_INFO("OpenGL Info:");
+        EVA_CORE_INFO("  Vendor: {0}", (const char *)glGetString(GL_VENDOR));
+        EVA_CORE_INFO("  Renderer: {0}",
+                      (const char *)glGetString(GL_RENDERER));
+        EVA_CORE_INFO("  Version: {0}", (const char *)glGetString(GL_VERSION));
     }
 
     void OpenGLContext::SwapBuffers() { glfwSwapBuffers(m_WindowHandle); }
