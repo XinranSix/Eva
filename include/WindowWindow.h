@@ -32,10 +32,8 @@ namespace Eva {
         virtual void Init(const WindowProps &props);
         virtual void Shutdown();
 
-    public:
-        GLFWwindow *m_Window;
-
     private:
+        GLFWwindow *m_Window;
         struct WindowData {
             std::string Title;
             unsigned int Width, Height;
