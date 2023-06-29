@@ -10,6 +10,7 @@
 /**/*.local
 /**/*.log
 /**/*.xmake
+/**/*.VSCodeCounter
 
 /**/npm-debug.log*
 /**/yarn-debug.log*

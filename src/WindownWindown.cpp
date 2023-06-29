@@ -47,9 +47,9 @@ namespace Eva {
         }
         m_Window = glfwCreateWindow((int)props.Width, (int)props.Height,
                                     m_Data.Title.c_str(), nullptr, nullptr);
-        glfwMakeContextCurrent(m_Window);
-        int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-        EVA_CORE_ASSERT(status, "Failed to initailize Glad!");
+        m_Context = new OpenGLContext(m_Window);
+        m_Context->Init();
+
         glfwSetWindowUserPointer(m_Window, &m_Data);
         SetVSync(true);
 
@@ -95,7 +95,7 @@ namespace Eva {
         glfwSetCharCallback(m_Window, [](GLFWwindow *window,
                                          unsigned int keycode) {
             WindowData &data = *(WindowData *)glfwGetWindowUserPointer(window);
-            
+
             KeyTypedEvent event(keycode);
             data.EventCallback(event);
         });
@@ -138,6 +138,8 @@ namespace Eva {
     void WindowWindow::OnUpdate() {
 
         glfwPollEvents();
+        // TODO: 添加上下文代码
+        m_Context->SwapBuffers();
         glfwSwapBuffers(m_Window);
     }
 

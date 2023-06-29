@@ -6,4 +6,4 @@
 
 # EvaEngine
 
-> 叫它 Eva 好了。
+> 就叫它 Eva 好了。

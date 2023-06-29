@@ -1,46 +1,6 @@
 [
 {
   "directory": "d:\\workspace\\MyRepositories\\Eva",
-  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++17", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\imgui\\windows\\x64\\release\\imgui\\imgui.cpp.obj", "imgui\\imgui.cpp"],
-  "file": "imgui\\imgui.cpp"
-},
-{
-  "directory": "d:\\workspace\\MyRepositories\\Eva",
-  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++17", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\imgui\\windows\\x64\\release\\imgui\\imgui_demo.cpp.obj", "imgui\\imgui_demo.cpp"],
-  "file": "imgui\\imgui_demo.cpp"
-},
-{
-  "directory": "d:\\workspace\\MyRepositories\\Eva",
-  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++17", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\imgui\\windows\\x64\\release\\imgui\\imgui_draw.cpp.obj", "imgui\\imgui_draw.cpp"],
-  "file": "imgui\\imgui_draw.cpp"
-},
-{
-  "directory": "d:\\workspace\\MyRepositories\\Eva",
-  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++17", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\imgui\\windows\\x64\\release\\imgui\\imgui_impl_glfw.cpp.obj", "imgui\\imgui_impl_glfw.cpp"],
-  "file": "imgui\\imgui_impl_glfw.cpp"
-},
-{
-  "directory": "d:\\workspace\\MyRepositories\\Eva",
-  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++17", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\imgui\\windows\\x64\\release\\imgui\\imgui_impl_opengl3.cpp.obj", "imgui\\imgui_impl_opengl3.cpp"],
-  "file": "imgui\\imgui_impl_opengl3.cpp"
-},
-{
-  "directory": "d:\\workspace\\MyRepositories\\Eva",
-  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++17", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\imgui\\windows\\x64\\release\\imgui\\imgui_tables.cpp.obj", "imgui\\imgui_tables.cpp"],
-  "file": "imgui\\imgui_tables.cpp"
-},
-{
-  "directory": "d:\\workspace\\MyRepositories\\Eva",
-  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++17", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\imgui\\windows\\x64\\release\\imgui\\imgui_widgets.cpp.obj", "imgui\\imgui_widgets.cpp"],
-  "file": "imgui\\imgui_widgets.cpp"
-},
-{
-  "directory": "d:\\workspace\\MyRepositories\\Eva",
-  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\main\\windows\\x64\\release\\src\\glad.c.obj", "src\\glad.c"],
-  "file": "src\\glad.c"
-},
-{
-  "directory": "d:\\workspace\\MyRepositories\\Eva",
   "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++17", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\main\\windows\\x64\\release\\src\\Application.cpp.obj", "src\\Application.cpp"],
   "file": "src\\Application.cpp"
 },
@@ -88,4 +48,44 @@
   "directory": "d:\\workspace\\MyRepositories\\Eva",
   "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++17", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\main\\windows\\x64\\release\\src\\WindowsInput.cpp.obj", "src\\WindowsInput.cpp"],
   "file": "src\\WindowsInput.cpp"
+},
+{
+  "directory": "d:\\workspace\\MyRepositories\\Eva",
+  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\main\\windows\\x64\\release\\src\\glad.c.obj", "src\\glad.c"],
+  "file": "src\\glad.c"
+},
+{
+  "directory": "d:\\workspace\\MyRepositories\\Eva",
+  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++17", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\imgui\\windows\\x64\\release\\imgui\\imgui.cpp.obj", "imgui\\imgui.cpp"],
+  "file": "imgui\\imgui.cpp"
+},
+{
+  "directory": "d:\\workspace\\MyRepositories\\Eva",
+  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++17", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\imgui\\windows\\x64\\release\\imgui\\imgui_demo.cpp.obj", "imgui\\imgui_demo.cpp"],
+  "file": "imgui\\imgui_demo.cpp"
+},
+{
+  "directory": "d:\\workspace\\MyRepositories\\Eva",
+  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++17", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\imgui\\windows\\x64\\release\\imgui\\imgui_draw.cpp.obj", "imgui\\imgui_draw.cpp"],
+  "file": "imgui\\imgui_draw.cpp"
+},
+{
+  "directory": "d:\\workspace\\MyRepositories\\Eva",
+  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++17", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\imgui\\windows\\x64\\release\\imgui\\imgui_impl_glfw.cpp.obj", "imgui\\imgui_impl_glfw.cpp"],
+  "file": "imgui\\imgui_impl_glfw.cpp"
+},
+{
+  "directory": "d:\\workspace\\MyRepositories\\Eva",
+  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++17", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\imgui\\windows\\x64\\release\\imgui\\imgui_impl_opengl3.cpp.obj", "imgui\\imgui_impl_opengl3.cpp"],
+  "file": "imgui\\imgui_impl_opengl3.cpp"
+},
+{
+  "directory": "d:\\workspace\\MyRepositories\\Eva",
+  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++17", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\imgui\\windows\\x64\\release\\imgui\\imgui_tables.cpp.obj", "imgui\\imgui_tables.cpp"],
+  "file": "imgui\\imgui_tables.cpp"
+},
+{
+  "directory": "d:\\workspace\\MyRepositories\\Eva",
+  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++17", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\imgui\\windows\\x64\\release\\imgui\\imgui_widgets.cpp.obj", "imgui\\imgui_widgets.cpp"],
+  "file": "imgui\\imgui_widgets.cpp"
 }]

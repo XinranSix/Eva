@@ -8,7 +8,10 @@
 #pragma once
 
 #include <GLFW/glfw3.h>
+
 #include "Window.h"
+#include "Renderer/GraphicsContext.h"
+#include "Renderer/OpenGLContext.h"
 
 namespace Eva {
 
@@ -38,6 +41,8 @@ namespace Eva {
 
     private:
         GLFWwindow *m_Window;
+        GraphicsContext *m_Context;
+
         struct WindowData {
             std::string Title;
             unsigned int Width, Height;

@@ -8,8 +8,13 @@ target("imgui")
     set_kind("static")
     add_files("./imgui/*.cpp")
 
+target("Renderer")
+    set_kind("static")
+    add_files("./Renderer/*.cpp")
+
+
 target("main")
     set_kind("binary")
-    add_files("./src/*.cpp", "./src/glad.c")
-    add_deps("imgui")
+    add_files("./src/*.cpp", "./src/*.c")
+    add_deps("imgui", "Renderer")
     add_links("glfw3dll")
