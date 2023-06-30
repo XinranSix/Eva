@@ -6,7 +6,7 @@
  */
 
 #include <glad/glad.h>
-// #include <GLFW/glfw3.h>
+#include <GLFW/glfw3.h>
 #include <memory>
 #include <stdint.h>
 #include <vcruntime.h>
@@ -15,11 +15,7 @@
 #include "SandBoxApp.h"
 #include "eva/Assert.h"
 #include "Renderer.h"
-// #include "ApplicationEvent.h"
-// #include "Log.h"
-// #include "Input.h"
-
-// class SandBox;
+#include "OrthographicCamera.h"
 
 namespace Eva {
 
@@ -27,7 +23,7 @@ namespace Eva {
 
     Application *Application::s_Instance = nullptr;
 
-    Application::Application() {
+    Application::Application() : m_Camera(-1.6f, 1.6f, -0.9f, 0.9f) {
         EVA_CORE_ASSERT(!s_Instance, "Application already exists!");
         s_Instance = this;
         m_Window = std::unique_ptr<Window>(Window::Create());
@@ -68,11 +64,13 @@ namespace Eva {
             layout(location = 0) in vec3 a_Position;
             layout(location = 1) in vec3 a_Color;
 
+            uniform mat4 u_ViewProjection;
+
             out vec3 v_Color;
             out vec3 v_Position;
 
             void main() {
-                gl_Position = vec4(a_Position, 1.0);
+                gl_Position = u_ViewProjection * vec4(a_Position, 1.0);
                 v_Color = a_Color;
                 v_Position = a_Position;
             }
@@ -93,19 +91,13 @@ namespace Eva {
 
         m_Shader.reset(new Shader(vertexSrc, fragmentSrc));
 
-        /* --------------------------------------------------------------------------
-         */
-        /*                                     // */
-        /* --------------------------------------------------------------------------
-         */
-
         m_SquareVA.reset(VertexArray::Create());
 
         float squareVertices[] = {
-            -0.5f, -0.5f, 0.0f, //
-            0.5f,  -0.5f, 0.0f, //
-            0.5f,  0.5f,  0.0f, //
-            -0.5f, 0.5f,  0.0f  //
+            -0.75f, -0.75f, 0.0f, //
+            0.75f,  -0.75f, 0.0f, //
+            0.75f,  0.75f,  0.0f, //
+            -0.75f, 0.75f,  0.0f  //
         };
 
         std::shared_ptr<VertexBuffer> squareVB;
@@ -126,8 +118,10 @@ namespace Eva {
 
             layout(location = 0) in vec3 a_Position;
 
+            uniform mat4 u_ViewProjection;
+
             void main() {
-                gl_Position = vec4(a_Position, 1.0);
+                gl_Position = u_ViewProjection * vec4(a_Position, 1.0);
             }
         )";
 
@@ -135,6 +129,8 @@ namespace Eva {
             #version 330 core
 
             out vec4 color;
+
+            // uniform vec3 u_Color;
 
             void main() {
                 color =vec4(1.0,1.0,0.0, 1.0);
@@ -161,13 +157,11 @@ namespace Eva {
     }
 
     void Application::PushLayer(Layer *layer) {
-        // HZ_PROFILE_FUNCTION();
         m_LayerStack.PushLayer(layer);
         layer->OnAttach();
     }
 
     void Application::PushOverlay(Layer *layer) {
-        // HZ_PROFILE_FUNCTION();
         m_LayerStack.PushOverlay(layer);
         layer->OnAttach();
     }
@@ -178,13 +172,12 @@ namespace Eva {
             RenderCommand::SetClearColor({0.1f, 0.1f, 0.1f, 1.00f});
             RenderCommand::Clear();
 
-            Renderer::BeginScene();
+            m_Camera.SetPosition({0.5f, 0.5f, 0.0f});
+            m_Camera.SetRotation(45.0f);
 
-            m_BlueShader->Bind();
-            Renderer::Submit(m_SquareVA);
-
-            m_Shader->Bind();
-            Renderer::Submit(m_VertexArray);
+            Renderer::BeginScene(m_Camera);
+            Renderer::Submit(m_BlueShader, m_SquareVA);
+            Renderer::Submit(m_Shader, m_VertexArray);
 
             Renderer::EndScene();
 
