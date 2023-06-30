@@ -14,6 +14,7 @@
 #include "Application.h"
 #include "SandBoxApp.h"
 #include "eva/Assert.h"
+#include "Renderer.h"
 // #include "ApplicationEvent.h"
 // #include "Log.h"
 // #include "Input.h"
@@ -174,20 +175,18 @@ namespace Eva {
     void Application::Run() {
         while (m_Running) {
 
-            glClearColor(0.1f, 0.1f, 0.1f, 1.00f);
-            glClear(GL_COLOR_BUFFER_BIT);
+            RenderCommand::SetClearColor({0.1f, 0.1f, 0.1f, 1.00f});
+            RenderCommand::Clear();
+
+            Renderer::BeginScene();
 
             m_BlueShader->Bind();
-            m_SquareVA->Bind();
-            glDrawElements(GL_TRIANGLES,
-                           m_SquareVA->GetIndexBuffers()->GetCount(),
-                           GL_UNSIGNED_INT, nullptr);
+            Renderer::Submit(m_SquareVA);
 
-            m_VertexArray->Bind();
             m_Shader->Bind();
-            glDrawElements(GL_TRIANGLES,
-                           m_VertexArray->GetIndexBuffers()->GetCount(),
-                           GL_UNSIGNED_INT, nullptr);
+            Renderer::Submit(m_VertexArray);
+
+            Renderer::EndScene();
 
             for (Layer *layer : m_LayerStack) {
                 layer->OnUpdate();

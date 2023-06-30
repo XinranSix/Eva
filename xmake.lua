@@ -20,4 +20,3 @@ target("imgui")
 target("Renderer")
     set_kind("static")
     add_files("./Renderer/*.cpp")
-

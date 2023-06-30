@@ -13,10 +13,11 @@ namespace Eva {
 
     VertexArray *VertexArray::Create() {
         switch (Renderer::GetAPI()) {
-        case RendererAPI::None:
-            EVA_CORE_ASSERT(false, "RendererAPI::None is currently not supported!");
+        case RendererAPI::API::None:
+            EVA_CORE_ASSERT(false,
+                            "RendererAPI::None is currently not supported!");
             return nullptr;
-        case RendererAPI::OpenGL:
+        case RendererAPI::API::OpenGL:
             return new OpenGLVertexArray();
         }
         EVA_CORE_ASSERT(false, "Unknow RendererAPI!");
