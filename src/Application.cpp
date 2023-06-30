@@ -26,6 +26,35 @@ namespace Eva {
 
     Application *Application::s_Instance = nullptr;
 
+    static GLenum ShaderDataTypeToOpenGLBaseType(ShaderDataType type) {
+        switch (type) {
+        case ShaderDataType::Float:
+            return GL_FLOAT;
+        case ShaderDataType::Float2:
+            return GL_FLOAT;
+        case ShaderDataType::Float3:
+            return GL_FLOAT;
+        case ShaderDataType::Float4:
+            return GL_FLOAT;
+        case ShaderDataType::Mat3:
+            return GL_FLOAT;
+        case ShaderDataType::Mat4:
+            return GL_FLOAT;
+        case ShaderDataType::Int:
+            return GL_INT;
+        case ShaderDataType::Int2:
+            return GL_INT;
+        case ShaderDataType::Int3:
+            return GL_INT;
+        case ShaderDataType::Int4:
+            return GL_INT;
+        case ShaderDataType::Bool:
+            return GL_BOOL;
+        }
+        EVA_CORE_ASSERT(false, "UnKnown ShaderDataType!");
+        return 0;
+    }
+
     Application::Application() {
         EVA_CORE_ASSERT(!s_Instance, "Application already exists!");
         s_Instance = this;
@@ -39,9 +68,9 @@ namespace Eva {
         glBindVertexArray(m_VertexArray);
 
         float vertices[] = {
-            -0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, //
-            0.5f,  -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, //
-            0.0f,  0.5f,  0.0f, 0.0f, 0.0f, 1.0f  //
+            -0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, //
+            0.5f,  -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, //
+            0.0f,  0.5f,  0.0f, 1.0f, 1.0f, 0.0f  //
         };
 
         // float vertices[] = {
@@ -52,13 +81,33 @@ namespace Eva {
 
         m_VertexBuffer.reset(VertexBuffer::Create(vertices, sizeof(vertices)));
 
-        glEnableVertexAttribArray(0);
-        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), nullptr);
-        glEnableVertexAttribArray(1);
-        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void *)(sizeof(int) * 3));
+        {
+            BufferLayout layout = {
+                {ShaderDataType::Float3, "a_Position"},
+                {ShaderDataType::Float3, "a_Color"},
+            };
+            m_VertexBuffer->SetLayout(layout);
+        }
+
+        uint32_t index = 0;
+        // FIXME: 此处有 Bug，layout 不能是 const 修饰的，不知道为什么
+        // const auto &layout = m_VertexBuffer->GetLayout();
+        auto layout = m_VertexBuffer->GetLayout();
+
+        for (const auto &element : layout) {
+            std::cout << element.Name << std::endl;
+            glEnableVertexAttribArray(index);
+            glVertexAttribPointer(index, element.GetComponentCount(),
+                                  ShaderDataTypeToOpenGLBaseType(element.Type),
+                                  element.Normalized ? GL_TRUE : GL_FALSE,
+                                  layout.GetStride(),
+                                  (const void *)element.Offset);
+            ++index;
+        }
 
         uint32_t indices[3] = {0, 1, 2};
-        m_IndexBuffer.reset(IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+        m_IndexBuffer.reset(
+            IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 
         std::string vertexSrc = R"(
             #version 330 core
@@ -96,7 +145,8 @@ namespace Eva {
 
     void Application::OnEvent(Event &e) {
         EventDispatcher dispatcher(e);
-        dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::OnWindownClose));
+        dispatcher.Dispatch<WindowCloseEvent>(
+            BIND_EVENT_FN(Application::OnWindownClose));
 
         for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();) {
             (*--it)->OnEvent(e);
@@ -126,7 +176,8 @@ namespace Eva {
 
             m_Shader->Bind();
             glBindVertexArray(m_VertexArray);
-            glDrawElements(GL_TRIANGLES, m_IndexBuffer->GetCount(), GL_UNSIGNED_INT, nullptr);
+            glDrawElements(GL_TRIANGLES, m_IndexBuffer->GetCount(),
+                           GL_UNSIGNED_INT, nullptr);
 
             for (Layer *layer : m_LayerStack) {
                 layer->OnUpdate();
