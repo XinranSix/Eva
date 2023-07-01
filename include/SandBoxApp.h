@@ -8,39 +8,22 @@
 #pragma once
 
 #include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
-#include "Layer.h"
-#include "Log.h"
-#include "LayerStack.h"
-#include "Input.h"
-#include "KeyCodes.h"
-#include "Event.h"
-#include "ApplicationEvent.h"
-#include "KeyEvent.h"
-#include "imgui.h"
-#include "Window.h"
-#include "eva/eva.h"
-#include "ApplicationEvent.h"
-#include "Layer.h"
-#include "LayerStack.h"
-#include "ImGuiLayer.h"
-#include "Shader.h"
-#include "Buffer.h"
-#include "VertexArray.h"
-#include "OrthographicCamera.h"
 #include "Application.h"
 #include "SandBoxApp.h"
-#include "eva/Assert.h"
 #include "Renderer.h"
-#include "RenderCommand.h"
-#include "Event.h"
+#include "Log.h"
+#include "Input.h"
+#include "ApplicationEvent.h"
+#include "KeyCodes.h"
 
 // FIXME:示例 Layer
 class ExampleLayer : public Eva::Layer {
 public:
     ExampleLayer()
         : Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f),
-          m_CameraPosition(0.0f) {
+          m_CameraPosition(0.0f), m_SquarePosition(0.0f) {
 
         m_VertexArray.reset(Eva::VertexArray::Create());
 
@@ -76,12 +59,13 @@ public:
             layout(location = 1) in vec3 a_Color;
 
             uniform mat4 u_ViewProjection;
+            uniform mat4 u_Transform;
 
             out vec3 v_Color;
             out vec3 v_Position;
 
             void main() {
-                gl_Position = u_ViewProjection * vec4(a_Position, 1.0);
+                gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);
                 v_Color = a_Color;
                 v_Position = a_Position;
             }
@@ -105,10 +89,10 @@ public:
         m_SquareVA.reset(Eva::VertexArray::Create());
 
         float squareVertices[] = {
-            -0.75f, -0.75f, 0.0f, //
-            0.75f,  -0.75f, 0.0f, //
-            0.75f,  0.75f,  0.0f, //
-            -0.75f, 0.75f,  0.0f  //
+            -0.5f, -0.5f, 0.0f, //
+            0.5f,  -0.5f, 0.0f, //
+            0.5f,  0.5f,  0.0f, //
+            -0.5f, 0.5f,  0.0f  //
         };
 
         std::shared_ptr<Eva::VertexBuffer> squareVB;
@@ -130,9 +114,10 @@ public:
             layout(location = 0) in vec3 a_Position;
 
             uniform mat4 u_ViewProjection;
+            uniform mat4 u_Transform;
 
             void main() {
-                gl_Position = u_ViewProjection * vec4(a_Position, 1.0);
+                gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);
             }
         )";
 
@@ -153,7 +138,7 @@ public:
     }
 
     void OnUpdate(Eva::Timestep ts) override {
-        // FIXME: 方向似乎不对
+
         if (Eva::Input::IsKeyPressed(EVA_KEY_LEFT)) {
             m_CameraPosition.x -= m_CameraMoveSpeed * ts;
         } else if (Eva::Input::IsKeyPressed(EVA_KEY_RIGHT)) {
@@ -172,6 +157,24 @@ public:
             m_CameraRotation -= m_CameraRotationSpeed * ts;
         }
 
+        /* --------------------------------------------------------------------------
+         */
+
+        if (Eva::Input::IsKeyPressed(EVA_KEY_J)) {
+            m_SquarePosition.x -= m_SquareMoveSpeed * ts;
+        } else if (Eva::Input::IsKeyPressed(EVA_KEY_L)) {
+            m_SquarePosition.x += m_SquareMoveSpeed * ts;
+        }
+
+        if (Eva::Input::IsKeyPressed(EVA_KEY_I)) {
+            m_SquarePosition.y += m_SquareMoveSpeed * ts;
+        } else if (Eva::Input::IsKeyPressed(EVA_KEY_K)) {
+            m_SquarePosition.y -= m_SquareMoveSpeed * ts;
+        }
+
+        /* --------------------------------------------------------------------------
+         */
+
         Eva::RenderCommand::SetClearColor({0.1f, 0.1f, 0.1f, 1.00f});
         Eva::RenderCommand::Clear();
 
@@ -179,7 +182,17 @@ public:
         m_Camera.SetRotation(m_CameraRotation);
 
         Eva::Renderer::BeginScene(m_Camera);
-        Eva::Renderer::Submit(m_BlueShader, m_SquareVA);
+
+        static glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
+
+        for (int y = 0; y < 20; ++y) {
+            for (int x = 0; x < 20; x++) {
+                glm::vec3 pos(x * 0.11f, y * 0.11f, 0.0f);
+                glm::mat4 transform =
+                    glm::translate(glm::mat4(1.0f), pos) * scale;
+                Eva::Renderer::Submit(m_BlueShader, m_SquareVA, transform);
+            }
+        }
         Eva::Renderer::Submit(m_Shader, m_VertexArray);
 
         Eva::Renderer::EndScene();
@@ -198,9 +211,13 @@ private:
 
     Eva::OrthographicCamera m_Camera;
     glm::vec3 m_CameraPosition;
-    float m_CameraMoveSpeed = 1.0f;
+
+    float m_CameraMoveSpeed = 5.0f;
     float m_CameraRotation = 0.0f;
-    float m_CameraRotationSpeed = 30.0f;
+    float m_CameraRotationSpeed = 180.0f;
+
+    glm::vec3 m_SquarePosition;
+    float m_SquareMoveSpeed = 1.0f;
 };
 
 class SandBox : public Eva::Application {

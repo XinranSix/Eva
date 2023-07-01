@@ -24,7 +24,9 @@ namespace Eva {
             glm::rotate(glm::mat4(1.0f), glm::radians(m_Rotation),
                         glm::vec3(0, 0, 1));
 
-        m_ViewMatrix = glm::inverse(transform);
+        // FIXME: 矩阵是否要求逆，有待商榷
+        // m_ViewMatrix = glm::inverse(transform);
+        m_ViewMatrix = transform;
         m_ViewProjectionMatrix = m_ProjectionMatrix * m_ViewMatrix;
     }
 } // namespace Eva
