@@ -19,6 +19,7 @@
 #include "Buffer.h"
 #include "VertexArray.h"
 #include "OrthographicCamera.h"
+#include "Timestep.h"
 
 namespace Eva {
     class Application {
@@ -40,18 +41,13 @@ namespace Eva {
     private:
         bool OnWindownClose(WindowCloseEvent &e);
 
+    private:
         std::unique_ptr<Window> m_Window;
         ImGuiLayer *m_ImGuiLayer;
         bool m_Running = true;
         LayerStack m_LayerStack;
-
-        std::shared_ptr<Shader> m_Shader;
-        std::shared_ptr<VertexArray> m_VertexArray;
-
-        std::shared_ptr<Shader> m_BlueShader;
-        std::shared_ptr<VertexArray> m_SquareVA;
-
-        OrthographicCamera m_Camera;
+        Timestep m_Timestep;
+        float m_LastFrameTime = 0.0f;
 
     private:
         static Application *s_Instance;

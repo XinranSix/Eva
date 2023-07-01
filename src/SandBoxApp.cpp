@@ -7,7 +7,6 @@
 
 #include "Application.h"
 #include "SandBoxApp.h"
-// #include "ImGuiLayer.h"
 
 SandBox::SandBox() {
 
