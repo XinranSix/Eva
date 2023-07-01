@@ -9,6 +9,8 @@
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+#include <imgui.h>
 
 #include "Application.h"
 #include "SandBoxApp.h"
@@ -17,6 +19,7 @@
 #include "Input.h"
 #include "ApplicationEvent.h"
 #include "KeyCodes.h"
+#include "OpenGLShader.h"
 
 // FIXME:示例 Layer
 class ExampleLayer : public Eva::Layer {
@@ -84,7 +87,7 @@ public:
             }
         )";
 
-        m_Shader.reset(new Eva::Shader(vertexSrc, fragmentSrc));
+        m_Shader.reset(Eva::Shader::Create(vertexSrc, fragmentSrc));
 
         m_SquareVA.reset(Eva::VertexArray::Create());
 
@@ -108,7 +111,7 @@ public:
             squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
         m_SquareVA->SetIndexBuffer(squareIB);
 
-        std::string blueShaderVertexSrc = R"(
+        std::string flatColorShaderVertexSrc = R"(
             #version 330 core
 
             layout(location = 0) in vec3 a_Position;
@@ -121,20 +124,21 @@ public:
             }
         )";
 
-        std::string blueShaderFragmentSrc = R"(
+        std::string flatColorShaderFragmentSrc = R"(
             #version 330 core
 
             out vec4 color;
 
-            // uniform vec3 u_Color;
+            uniform vec3 u_Color;
+            // uniform vec3 u_LightDir;
 
             void main() {
-                color =vec4(1.0,1.0,0.0, 1.0);
+                color = vec4(u_Color, 1.0);
             }
         )";
 
-        m_BlueShader.reset(
-            new Eva::Shader(blueShaderVertexSrc, blueShaderFragmentSrc));
+        m_FlatColorShader.reset(Eva::Shader::Create(
+            flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
     }
 
     void OnUpdate(Eva::Timestep ts) override {
@@ -185,20 +189,29 @@ public:
 
         static glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
+        std::dynamic_pointer_cast<Eva::OpenGLShader>(m_FlatColorShader)->Bind();
+        std::dynamic_pointer_cast<Eva::OpenGLShader>(m_FlatColorShader)
+            ->UploadUniformFloat3("u_Color", m_SquareColor);
+
         for (int y = 0; y < 20; ++y) {
             for (int x = 0; x < 20; x++) {
                 glm::vec3 pos(x * 0.11f, y * 0.11f, 0.0f);
                 glm::mat4 transform =
                     glm::translate(glm::mat4(1.0f), pos) * scale;
-                Eva::Renderer::Submit(m_BlueShader, m_SquareVA, transform);
+                Eva::Renderer::Submit(m_FlatColorShader, m_SquareVA, transform);
             }
         }
+
         Eva::Renderer::Submit(m_Shader, m_VertexArray);
 
         Eva::Renderer::EndScene();
     }
 
-    void OnImGuiRender() override {}
+    void OnImGuiRender() override {
+        ImGui::Begin("Settings");
+        ImGui::ColorEdit3("Square Color",glm::value_ptr(m_SquareColor));
+        ImGui::End();
+    }
 
     void OnEvent(Eva::Event &event) override {}
 
@@ -206,7 +219,7 @@ private:
     std::shared_ptr<Eva::Shader> m_Shader;
     std::shared_ptr<Eva::VertexArray> m_VertexArray;
 
-    std::shared_ptr<Eva::Shader> m_BlueShader;
+    std::shared_ptr<Eva::Shader> m_FlatColorShader;
     std::shared_ptr<Eva::VertexArray> m_SquareVA;
 
     Eva::OrthographicCamera m_Camera;
@@ -218,6 +231,8 @@ private:
 
     glm::vec3 m_SquarePosition;
     float m_SquareMoveSpeed = 1.0f;
+
+    glm::vec3 m_SquareColor = {0.2f, 0.3f, 0.8f};
 };
 
 class SandBox : public Eva::Application {
