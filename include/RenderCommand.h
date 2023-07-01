@@ -1,13 +1,14 @@
 /**
  * @file    :   RenderCommand.h
  * @date    :   2023/06/30 19:07:14
- * @author  :   yaojie
+ * @author  :   Yao J
  * @version :   1.0
  */
 
 #pragma once
 
 #include "RendererAPI.h"
+#include "eva/Core.h"
 
 namespace Eva {
 
@@ -20,7 +21,7 @@ namespace Eva {
         inline static void Clear() { s_RendererAPI->Clear(); }
 
         inline static void
-        DrawIndexed(const std::shared_ptr<VertexArray> &vertexArray) {
+        DrawIndexed(const Ref<VertexArray> &vertexArray) {
             s_RendererAPI->DrawIndexed(vertexArray);
         }
 

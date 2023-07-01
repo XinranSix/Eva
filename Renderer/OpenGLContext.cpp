@@ -1,7 +1,7 @@
 /**
  * @file    :   OpenGLContext.cpp
  * @date    :   2023/06/29 19:49:40
- * @author  :   yaojie
+ * @author  :   Yao J
  * @version :   1.0
  */
 

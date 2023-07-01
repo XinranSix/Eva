@@ -1,7 +1,7 @@
 /**
  * @file    :   OpenGLShader.h
  * @date    :   2023/07/01 17:34:53
- * @author  :   yaojie
+ * @author  :   Yao J
  * @version :   1.0
  */
 

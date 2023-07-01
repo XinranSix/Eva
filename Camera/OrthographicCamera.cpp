@@ -1,7 +1,7 @@
 /**
  * @file    :   OrthographicCamera.cpp
  * @date    :   2023/06/30 22:26:29
- * @author  :   yaojie
+ * @author  :   Yao J
  * @version :   1.0
  */
 
@@ -24,7 +24,7 @@ namespace Eva {
             glm::rotate(glm::mat4(1.0f), glm::radians(m_Rotation),
                         glm::vec3(0, 0, 1));
 
-        // FIXME: 矩阵是否需要求逆，有待商榷
+        // FIXME: 此处矩阵应当求逆，但为了方便测试，我这里先不求逆
         // m_ViewMatrix = glm::inverse(transform);
         m_ViewMatrix = transform;
         m_ViewProjectionMatrix = m_ProjectionMatrix * m_ViewMatrix;

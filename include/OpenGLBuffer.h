@@ -1,7 +1,7 @@
 /**
  * @file    :   OpenGLBuffer.h
  * @date    :   2023/06/30 10:45:05
- * @author  :   yaojie
+ * @author  :   Yao J
  * @version :   1.0
  */
 

@@ -1,12 +1,13 @@
 /**
  * @file    :   Renderer.cpp
  * @date    :   2023/06/30 11:01:48
- * @author  :   yaojie
+ * @author  :   Yao J
  * @version :   1.0
  */
 
 #include "Renderer.h"
 #include "OpenGLShader.h"
+#include "eva/Core.h"
 
 #include <memory>
 
@@ -20,8 +21,8 @@ namespace Eva {
 
     void Renderer::EndScene() {}
 
-    void Renderer::Submit(const std::shared_ptr<Shader> &shader,
-                          const std::shared_ptr<VertexArray> &vertexArray,
+    void Renderer::Submit(const Ref<Shader> &shader,
+                          const Ref<VertexArray> &vertexArray,
                           const glm::mat4 &transform) {
 
         shader->Bind();

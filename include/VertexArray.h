@@ -1,7 +1,7 @@
 /**
  * @file    :   VertexArray.h
  * @date    :   2023/06/30 14:50:07
- * @author  :   yaojie
+ * @author  :   Yao J
  * @version :   1.0
  */
 

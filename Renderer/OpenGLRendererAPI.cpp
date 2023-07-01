@@ -1,7 +1,7 @@
 /**
  * @file    :   OpenGLRendererAPI.cpp
  * @date    :   2023/06/30 19:36:42
- * @author  :   yaojie
+ * @author  :   Yao J
  * @version :   1.0
  */
 
@@ -9,6 +9,7 @@
 #include <glad./glad.h>
 
 #include "OpenGLRendererAPI.h"
+#include "eva/Core.h"
 
 namespace Eva {
 
@@ -21,7 +22,7 @@ namespace Eva {
     }
 
     void OpenGLRendererAPI::DrawIndexed(
-        const std::shared_ptr<VertexArray> &vertexArray) {
+        const Ref<VertexArray> &vertexArray) {
         glDrawElements(GL_TRIANGLES, vertexArray->GetIndexBuffers()->GetCount(),
                        GL_UNSIGNED_INT, nullptr);
     }

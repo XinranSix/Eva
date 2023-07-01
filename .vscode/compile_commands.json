@@ -126,6 +126,11 @@
 },
 {
   "directory": "d:\\workspace\\MyRepositories\\Eva",
+  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++17", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\Renderer\\windows\\x64\\release\\Renderer\\OpenGLShader.cpp.obj", "Renderer\\OpenGLShader.cpp"],
+  "file": "Renderer\\OpenGLShader.cpp"
+},
+{
+  "directory": "d:\\workspace\\MyRepositories\\Eva",
   "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++17", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\Renderer\\windows\\x64\\release\\Renderer\\RenderCommand.cpp.obj", "Renderer\\RenderCommand.cpp"],
   "file": "Renderer\\RenderCommand.cpp"
 },
@@ -143,4 +148,9 @@
   "directory": "d:\\workspace\\MyRepositories\\Eva",
   "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++17", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\Renderer\\windows\\x64\\release\\Renderer\\VertexArray.cpp.obj", "Renderer\\VertexArray.cpp"],
   "file": "Renderer\\VertexArray.cpp"
+},
+{
+  "directory": "d:\\workspace\\MyRepositories\\Eva",
+  "arguments": ["D:\\software\\VisualStudio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++17", "/Iinclude", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\Camera\\windows\\x64\\release\\Camera\\OrthographicCamera.cpp.obj", "Camera\\OrthographicCamera.cpp"],
+  "file": "Camera\\OrthographicCamera.cpp"
 }]

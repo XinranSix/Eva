@@ -1,11 +1,13 @@
 /**
  * @file    :   Log.h
  * @date    :   2023/06/27 16:30:50
- * @author  :   yaojie
+ * @author  :   Yao J
  * @version :   1.0
  */
 
 #pragma once
+
+#include "eva/Core.h"
 
 #include <memory>
 #include <spdlog/spdlog.h>
@@ -15,17 +17,17 @@ namespace Eva {
     public:
         static void Init();
 
-        inline static std::shared_ptr<spdlog::logger> &GetCoreLogger() {
+        inline static Ref<spdlog::logger> &GetCoreLogger() {
             return s_CoreLogger;
         }
 
-        inline static std::shared_ptr<spdlog::logger> &GetClientLogger() {
+        inline static Ref<spdlog::logger> &GetClientLogger() {
             return s_ClientLogger;
         }
 
     private:
-        static std::shared_ptr<spdlog::logger> s_CoreLogger;
-        static std::shared_ptr<spdlog::logger> s_ClientLogger;
+        static Ref<spdlog::logger> s_CoreLogger;
+        static Ref<spdlog::logger> s_ClientLogger;
     };
 } // namespace GameEngine
 

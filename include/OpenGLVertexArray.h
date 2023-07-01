@@ -1,7 +1,7 @@
 /**
  * @file    :   OpenGLVertexArray.h
  * @date    :   2023/06/30 14:58:32
- * @author  :   yaojie
+ * @author  :   Yao J
  * @version :   1.0
  */
 
@@ -12,6 +12,7 @@
 #include <vector>
 
 #include "VertexArray.h"
+#include "eva/Core.h"
 
 namespace Eva {
 
@@ -24,23 +25,23 @@ namespace Eva {
         virtual void UnBind() const override;
 
         virtual void AddVertexBuffer(
-            const std::shared_ptr<VertexBuffer> &vertexBuffer) override;
+            const Ref<VertexBuffer> &vertexBuffer) override;
         virtual void SetIndexBuffer(
-            const std::shared_ptr<IndexBuffer> &indexBuffer) override;
+            const Ref<IndexBuffer> &indexBuffer) override;
 
-        virtual const std::vector<std::shared_ptr<VertexBuffer>> &
+        virtual const std::vector<Ref<VertexBuffer>> &
         GetVertexBuffers() const override {
             return m_VertexBuffers;
         }
 
-        virtual const std::shared_ptr<IndexBuffer> &
+        virtual const Ref<IndexBuffer> &
         GetIndexBuffers() const override {
             return m_IndexBuffer;
         }
 
     private:
         uint32_t m_RendererID;
-        std::vector<std::shared_ptr<VertexBuffer>> m_VertexBuffers;
-        std::shared_ptr<IndexBuffer> m_IndexBuffer;
+        std::vector<Ref<VertexBuffer>> m_VertexBuffers;
+        Ref<IndexBuffer> m_IndexBuffer;
     };
 } // namespace Eva

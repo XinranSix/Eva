@@ -1,7 +1,7 @@
 /**
  * @file    :   EntryPoint.h
  * @date    :   2023/06/27 14:18:24
- * @author  :   yaojie
+ * @author  :   Yao J
  * @version :   1.0
  * Engin Entry Point
  */

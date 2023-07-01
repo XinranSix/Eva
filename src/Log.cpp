@@ -1,11 +1,13 @@
 /**
  * @file    :   Log.cpp
  * @date    :   2023/06/27 16:30:53
- * @author  :   yaojie
+ * @author  :   Yao J
  * @version :   1.0
  */
 
 #include "Log.h"
+#include "eva/Core.h"
+
 #include <spdlog/sinks/stdout_color_sinks.h>
 
 namespace Eva {
@@ -20,6 +22,6 @@ namespace Eva {
         s_ClientLogger->set_level(spdlog::level::trace);
     }
 
-    std::shared_ptr<spdlog::logger> Log::s_CoreLogger;
-    std::shared_ptr<spdlog::logger> Log::s_ClientLogger;
+    Ref<spdlog::logger> Log::s_CoreLogger;
+    Ref<spdlog::logger> Log::s_ClientLogger;
 } // namespace GameEngine

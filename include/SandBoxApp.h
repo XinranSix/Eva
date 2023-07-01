@@ -1,7 +1,7 @@
 /**
  * @file    :   SandBoxApp.h
  * @date    :   2023/06/27 14:48:18
- * @author  :   yaojie
+ * @author  :   Yao J
  * @version :   1.0
  */
 
@@ -36,7 +36,7 @@ public:
             0.0f,  0.5f,  0.0f, 1.0f, 1.0f, 0.0f  //
         };
 
-        std::shared_ptr<Eva::VertexBuffer> m_VertexBuffer;
+        Eva::Ref<Eva::VertexBuffer> m_VertexBuffer;
         m_VertexBuffer.reset(
             Eva::VertexBuffer::Create(vertices, sizeof(vertices)));
 
@@ -49,7 +49,7 @@ public:
 
         uint32_t indices[3] = {0, 1, 2};
 
-        std::shared_ptr<Eva::IndexBuffer> m_IndexBuffer;
+        Eva::Ref<Eva::IndexBuffer> m_IndexBuffer;
         m_IndexBuffer.reset(Eva::IndexBuffer::Create(
             indices, sizeof(indices) / sizeof(uint32_t)));
 
@@ -98,7 +98,7 @@ public:
             -0.5f, 0.5f,  0.0f  //
         };
 
-        std::shared_ptr<Eva::VertexBuffer> squareVB;
+        Eva::Ref<Eva::VertexBuffer> squareVB;
         squareVB.reset(
             Eva::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 
@@ -106,7 +106,7 @@ public:
         m_SquareVA->AddVertexBuffer(squareVB);
 
         uint32_t squareIndices[6] = {0, 1, 2, 2, 3, 0};
-        std::shared_ptr<Eva::IndexBuffer> squareIB;
+        Eva::Ref<Eva::IndexBuffer> squareIB;
         squareIB.reset(Eva::IndexBuffer::Create(
             squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
         m_SquareVA->SetIndexBuffer(squareIB);
@@ -209,18 +209,18 @@ public:
 
     void OnImGuiRender() override {
         ImGui::Begin("Settings");
-        ImGui::ColorEdit3("Square Color",glm::value_ptr(m_SquareColor));
+        ImGui::ColorEdit3("Square Color", glm::value_ptr(m_SquareColor));
         ImGui::End();
     }
 
     void OnEvent(Eva::Event &event) override {}
 
 private:
-    std::shared_ptr<Eva::Shader> m_Shader;
-    std::shared_ptr<Eva::VertexArray> m_VertexArray;
+    Eva::Ref<Eva::Shader> m_Shader;
+    Eva::Ref<Eva::VertexArray> m_VertexArray;
 
-    std::shared_ptr<Eva::Shader> m_FlatColorShader;
-    std::shared_ptr<Eva::VertexArray> m_SquareVA;
+    Eva::Ref<Eva::Shader> m_FlatColorShader;
+    Eva::Ref<Eva::VertexArray> m_SquareVA;
 
     Eva::OrthographicCamera m_Camera;
     glm::vec3 m_CameraPosition;

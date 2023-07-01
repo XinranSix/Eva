@@ -1,7 +1,7 @@
 /**
  * @file    :   RendererAPI.h
  * @date    :   2023/06/30 18:56:27
- * @author  :   yaojie
+ * @author  :   Yao J
  * @version :   1.0
  */
 
@@ -11,6 +11,7 @@
 #include <memory>
 
 #include "VertexArray.h"
+#include "eva/Core.h"
 
 namespace Eva {
 
@@ -23,7 +24,7 @@ namespace Eva {
         virtual void Clear() = 0;
 
         virtual void
-        DrawIndexed(const std::shared_ptr<VertexArray> &vertexArray) = 0;
+        DrawIndexed(const Ref<VertexArray> &vertexArray) = 0;
 
         inline static API GetAPI() { return s_API; }
 

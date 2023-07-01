@@ -1,7 +1,7 @@
 /**
  * @file    :   OrthographicCamera.h
  * @date    :   2023/06/30 22:25:26
- * @author  :   yaojie
+ * @author  :   Yao J
  * @version :   1.0
  */
 

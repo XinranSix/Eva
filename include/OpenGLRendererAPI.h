@@ -1,13 +1,14 @@
 /**
  * @file    :   OpenGLRendererAPI.h
  * @date    :   2023/06/30 19:36:07
- * @author  :   yaojie
+ * @author  :   Yao J
  * @version :   1.0
  */
 
 #pragma once
 
 #include "RendererAPI.h"
+#include "eva/Core.h"
 
 namespace Eva {
 
@@ -17,6 +18,6 @@ namespace Eva {
         virtual void Clear() override;
 
         virtual void
-        DrawIndexed(const std::shared_ptr<VertexArray> &vertexArray) override;
+        DrawIndexed(const Ref<VertexArray> &vertexArray) override;
     };
 } // namespace Eva

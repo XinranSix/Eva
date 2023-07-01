@@ -1,7 +1,7 @@
 /**
  * @file    :   OpenGLContext.h
  * @date    :   2023/06/29 19:47:38
- * @author  :   yaojie
+ * @author  :   Yao J
  * @version :   1.0
  */
 

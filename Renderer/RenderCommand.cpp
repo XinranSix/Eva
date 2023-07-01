@@ -1,7 +1,7 @@
 /**
  * @file    :   RenderCommand.cpp
  * @date    :   2023/06/30 19:07:27
- * @author  :   yaojie
+ * @author  :   Yao J
  * @version :   1.0
  */
 

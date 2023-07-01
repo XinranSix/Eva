@@ -1,11 +1,13 @@
 /**
  * @file    :   Shader.h
  * @date    :   2023/06/29 22:12:33
- * @author  :   yaojie
+ * @author  :   Yao J
  * @version :   1.0
  */
 
 #pragma once
+
+#include "eva/Core.h"
 
 #include <string>
 #include <glm/glm.hpp>

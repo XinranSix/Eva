@@ -11,6 +11,7 @@ target("main")
     add_links("glfw3dll")
     after_build(function (target)
         os.cp("shaders", target:targetdir())
+        os.cp("assets", target:targetdir())
     end)
 
 target("imgui")
