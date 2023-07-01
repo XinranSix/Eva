@@ -20,6 +20,7 @@
 #include "ApplicationEvent.h"
 #include "KeyCodes.h"
 #include "OpenGLShader.h"
+#include "Texture.h"
 
 // FIXME:示例 Layer
 class ExampleLayer : public Eva::Layer {
@@ -92,17 +93,19 @@ public:
         m_SquareVA.reset(Eva::VertexArray::Create());
 
         float squareVertices[] = {
-            -0.5f, -0.5f, 0.0f, //
-            0.5f,  -0.5f, 0.0f, //
-            0.5f,  0.5f,  0.0f, //
-            -0.5f, 0.5f,  0.0f  //
+            -0.5f, -0.5f, 0.0f, 0.0f, 0.0f, //
+            0.5f,  -0.5f, 0.0f, 1.0f, 0.0f, //
+            0.5f,  0.5f,  0.0f, 1.0f, 1.0f, //
+            -0.5f, 0.5f,  0.0f, 0.0f, 1.0f  //
         };
 
         Eva::Ref<Eva::VertexBuffer> squareVB;
         squareVB.reset(
             Eva::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 
-        squareVB->SetLayout({{Eva::ShaderDataType::Float3, "a_Position"}});
+        squareVB->SetLayout({{Eva::ShaderDataType::Float3, "a_Position"},
+                             {Eva::ShaderDataType::Float2, "a_TexCoord"}});
+
         m_SquareVA->AddVertexBuffer(squareVB);
 
         uint32_t squareIndices[6] = {0, 1, 2, 2, 3, 0};
@@ -118,6 +121,7 @@ public:
 
             uniform mat4 u_ViewProjection;
             uniform mat4 u_Transform;
+           // uniform vec3 a_TexCoord;
 
             void main() {
                 gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);
@@ -139,6 +143,48 @@ public:
 
         m_FlatColorShader.reset(Eva::Shader::Create(
             flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
+
+        std::string textureShaderVertexSrc = R"(
+            #version 330 core
+
+            layout(location = 0) in vec3 a_Position;
+            layout(location = 1) in vec2 a_TexCoord;
+
+            uniform mat4 u_ViewProjection;
+            uniform mat4 u_Transform;
+
+            out vec2 v_TexCoord;
+
+            void main() {
+                v_TexCoord = a_TexCoord;
+                gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);
+            }
+        )";
+
+        std::string textureShaderFragmentSrc = R"(
+            #version 330 core
+
+            in vec2 v_TexCoord;
+
+            out vec4 color;
+
+            uniform sampler2D u_Texture;
+
+            void main() {
+                color = texture(u_Texture, v_TexCoord);
+            }
+        )";
+
+        m_TextureShader.reset(Eva::Shader::Create(textureShaderVertexSrc,
+                                                  textureShaderFragmentSrc));
+
+        m_Texture = Eva::Texture2D::Create("./assets/textures/Checkerboard.png");
+
+        // std::cout << (m_Texture.get() == nullptr) << std::endl;
+
+        std::dynamic_pointer_cast<Eva::OpenGLShader>(m_TextureShader)->Bind();
+        std::dynamic_pointer_cast<Eva::OpenGLShader>(m_TextureShader)
+            ->UploadUniformInt("u_Texture", 0);
     }
 
     void OnUpdate(Eva::Timestep ts) override {
@@ -161,9 +207,6 @@ public:
             m_CameraRotation -= m_CameraRotationSpeed * ts;
         }
 
-        /* --------------------------------------------------------------------------
-         */
-
         if (Eva::Input::IsKeyPressed(EVA_KEY_J)) {
             m_SquarePosition.x -= m_SquareMoveSpeed * ts;
         } else if (Eva::Input::IsKeyPressed(EVA_KEY_L)) {
@@ -175,9 +218,6 @@ public:
         } else if (Eva::Input::IsKeyPressed(EVA_KEY_K)) {
             m_SquarePosition.y -= m_SquareMoveSpeed * ts;
         }
-
-        /* --------------------------------------------------------------------------
-         */
 
         Eva::RenderCommand::SetClearColor({0.1f, 0.1f, 0.1f, 1.00f});
         Eva::RenderCommand::Clear();
@@ -202,7 +242,9 @@ public:
             }
         }
 
-        Eva::Renderer::Submit(m_Shader, m_VertexArray);
+        m_Texture->Bind();
+        Eva::Renderer::Submit(m_TextureShader, m_SquareVA,
+                              glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
         Eva::Renderer::EndScene();
     }
@@ -219,8 +261,10 @@ private:
     Eva::Ref<Eva::Shader> m_Shader;
     Eva::Ref<Eva::VertexArray> m_VertexArray;
 
-    Eva::Ref<Eva::Shader> m_FlatColorShader;
+    Eva::Ref<Eva::Shader> m_FlatColorShader, m_TextureShader;
     Eva::Ref<Eva::VertexArray> m_SquareVA;
+
+    Eva::Ref<Eva::Texture2D> m_Texture;
 
     Eva::OrthographicCamera m_Camera;
     glm::vec3 m_CameraPosition;

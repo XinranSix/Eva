@@ -53,8 +53,8 @@ namespace Eva {
 
     void OpenGLVertexArray::UnBind() const { glBindVertexArray(0); }
 
-    void OpenGLVertexArray::AddVertexBuffer(
-        const Ref<VertexBuffer> &vertexBuffer) {
+    void
+    OpenGLVertexArray::AddVertexBuffer(const Ref<VertexBuffer> &vertexBuffer) {
 
         EVA_CORE_ASSERT(vertexBuffer->GetLayout().GetElements().size(),
                         "Vertex Buffer has no layout!");
@@ -79,8 +79,8 @@ namespace Eva {
         m_VertexBuffers.push_back(vertexBuffer);
     }
 
-    void OpenGLVertexArray::SetIndexBuffer(
-        const Ref<IndexBuffer> &indexBuffer) {
+    void
+    OpenGLVertexArray::SetIndexBuffer(const Ref<IndexBuffer> &indexBuffer) {
 
         glBindVertexArray(m_RendererID);
         indexBuffer->Bind();
