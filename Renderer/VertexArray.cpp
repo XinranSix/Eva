@@ -8,17 +8,18 @@
 #include "Renderer.h"
 #include "VertexArray.h"
 #include "OpenGLVertexArray.h"
+#include <memory>
 
 namespace Eva {
 
-    VertexArray *VertexArray::Create() {
+    Ref<VertexArray> VertexArray::Create() {
         switch (Renderer::GetAPI()) {
         case RendererAPI::API::None:
             EVA_CORE_ASSERT(false,
                             "RendererAPI::None is currently not supported!");
             return nullptr;
         case RendererAPI::API::OpenGL:
-            return new OpenGLVertexArray();
+            return std::make_shared<OpenGLVertexArray>();
         }
         EVA_CORE_ASSERT(false, "Unknow RendererAPI!");
         return nullptr;

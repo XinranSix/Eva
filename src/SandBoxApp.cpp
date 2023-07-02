@@ -5,14 +5,14 @@
  * @version :   1.0
  */
 
+#include "SandBox2D.h"
 #include "SandBoxApp.h"
 #include "Application.h"
 
 SandBox::SandBox() {
-
-    PushLayer(new ExampleLayer());
-
-    // PushOverlay(new Eva::ImGuiLayer());
+    // PushLayer(new ExampleLayer());
+    // PushLayer(new SandBox2D());
+    PushOverlay(new SandBox2D());
 }
 
 SandBox::~SandBox() {}

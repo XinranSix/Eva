@@ -27,9 +27,9 @@
 class ExampleLayer : public Eva::Layer {
 public:
     ExampleLayer()
-        : Layer("Example"), m_CameraController(1280.0f / 720.f, true) {
+        : Layer("Example"), m_CameraController(1280.0f / 720.f) {
 
-        m_VertexArray.reset(Eva::VertexArray::Create());
+        m_VertexArray = Eva::VertexArray::Create();
 
         float vertices[] = {
             -0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, //
@@ -91,9 +91,7 @@ public:
         m_Shader =
             Eva::Shader::Create("VertexPosColor", vertexSrc, fragmentSrc);
 
-        // Shader::Create("shaders/Texture.glsl");
-
-        m_SquareVA.reset(Eva::VertexArray::Create());
+        m_SquareVA = Eva::VertexArray::Create();
 
         float squareVertices[] = {
             -0.5f, -0.5f, 0.0f, 0.0f, 0.0f, //
@@ -201,7 +199,7 @@ public:
         Eva::Renderer::EndScene();
     }
 
-    void OnImGuiRender() override {
+    virtual void OnImGuiRender() override {
         ImGui::Begin("Settings");
         ImGui::ColorEdit3("Square Color", glm::value_ptr(m_SquareColor));
         ImGui::End();
