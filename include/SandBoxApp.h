@@ -121,7 +121,6 @@ public:
 
             uniform mat4 u_ViewProjection;
             uniform mat4 u_Transform;
-           // uniform vec3 a_TexCoord;
 
             void main() {
                 gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);
@@ -134,7 +133,6 @@ public:
             out vec4 color;
 
             uniform vec3 u_Color;
-            // uniform vec3 u_LightDir;
 
             void main() {
                 color = vec4(u_Color, 1.0);
@@ -178,9 +176,11 @@ public:
         m_TextureShader.reset(Eva::Shader::Create(textureShaderVertexSrc,
                                                   textureShaderFragmentSrc));
 
-        m_Texture = Eva::Texture2D::Create("./assets/textures/Checkerboard.png");
+        m_Texture =
+            Eva::Texture2D::Create("./assets/textures/Checkerboard.png");
 
-        // std::cout << (m_Texture.get() == nullptr) << std::endl;
+        m_ChernoLogTexture =
+            Eva::Texture2D::Create("./assets/textures/ChernoLogo.png");
 
         std::dynamic_pointer_cast<Eva::OpenGLShader>(m_TextureShader)->Bind();
         std::dynamic_pointer_cast<Eva::OpenGLShader>(m_TextureShader)
@@ -245,6 +245,10 @@ public:
         m_Texture->Bind();
         Eva::Renderer::Submit(m_TextureShader, m_SquareVA,
                               glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+        m_ChernoLogTexture->Bind();
+        Eva::Renderer::Submit(m_TextureShader, m_SquareVA,
+
+                              glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
         Eva::Renderer::EndScene();
     }
@@ -264,7 +268,7 @@ private:
     Eva::Ref<Eva::Shader> m_FlatColorShader, m_TextureShader;
     Eva::Ref<Eva::VertexArray> m_SquareVA;
 
-    Eva::Ref<Eva::Texture2D> m_Texture;
+    Eva::Ref<Eva::Texture2D> m_Texture, m_ChernoLogTexture;
 
     Eva::OrthographicCamera m_Camera;
     glm::vec3 m_CameraPosition;

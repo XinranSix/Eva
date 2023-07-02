@@ -23,8 +23,11 @@ namespace Eva {
     Application::Application() {
         EVA_CORE_ASSERT(!s_Instance, "Application already exists!");
         s_Instance = this;
+
         m_Window = std::unique_ptr<Window>(Window::Create());
         m_Window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
+
+        Renderer::Init();
 
         m_ImGuiLayer = new ImGuiLayer();
         PushOverlay(m_ImGuiLayer);

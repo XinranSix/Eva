@@ -15,6 +15,8 @@ namespace Eva {
 
     Renderer::SceneData *Renderer::m_SceneData = new Renderer::SceneData;
 
+    void Renderer::Init() { RenderCommand::Init(); }
+
     void Renderer::BeginScene(OrthographicCamera &camera) {
         m_SceneData->ViewProjectionMatrix = camera.GetViewProjectionMatrix();
     }
