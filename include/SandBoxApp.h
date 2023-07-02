@@ -7,21 +7,20 @@
 
 #pragma once
 
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
 #include <imgui.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/type_ptr.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
-#include "Application.h"
-#include "SandBoxApp.h"
-#include "Renderer.h"
 #include "Log.h"
 #include "Input.h"
-#include "ApplicationEvent.h"
-#include "KeyCodes.h"
-#include "OpenGLShader.h"
-#include "Texture.h"
 #include "Shader.h"
+#include "Texture.h"
+#include "Renderer.h"
+#include "KeyCodes.h"
+#include "Application.h"
+#include "OpenGLShader.h"
+#include "ApplicationEvent.h"
 
 // FIXME:示例 Layer
 class ExampleLayer : public Eva::Layer {
@@ -199,6 +198,15 @@ public:
 
         Eva::Renderer::BeginScene(m_Camera);
 
+        /* ------------------------------------------------------------------ */
+        // Eva::Renderer::BeginScene(m_Scene);
+        // Eva::Renderer::BeginScene(m_Scene2D);
+        // Eva::Renderer::BeginScene(m_Scene2D);
+        // Eva::Renderer::DrawQuad();
+        // Eva::Renderer::DrawRect();
+        // Eva::Renderer::BeginScene2D(m_Camera);
+        /* ------------------------------------------------------------------ */
+
         static glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
         std::dynamic_pointer_cast<Eva::OpenGLShader>(m_FlatColorShader)->Bind();
@@ -206,7 +214,7 @@ public:
             ->UploadUniformFloat3("u_Color", m_SquareColor);
 
         for (int y = 0; y < 20; ++y) {
-            for (int x = 0; x < 20; x++) {
+            for (int x = 0; x < 20; ++x) {
                 glm::vec3 pos(x * 0.11f, y * 0.11f, 0.0f);
                 glm::mat4 transform =
                     glm::translate(glm::mat4(1.0f), pos) * scale;

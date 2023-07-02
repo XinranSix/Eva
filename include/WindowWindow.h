@@ -10,8 +10,8 @@
 #include <GLFW/glfw3.h>
 
 #include "Window.h"
-#include "Renderer/GraphicsContext.h"
 #include "Renderer/OpenGLContext.h"
+#include "Renderer/GraphicsContext.h"
 
 namespace Eva {
 

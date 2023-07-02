@@ -7,8 +7,9 @@
 
 #pragma once
 
-#include "Event.h"
 #include <sstream>
+
+#include "Event.h"
 #include "eva/KeyCodes.h"
 
 namespace Eva {

@@ -5,11 +5,11 @@
  * @version :   1.0
  */
 
+#include <memory>
+
+#include "eva/Core.h"
 #include "Renderer.h"
 #include "OpenGLShader.h"
-#include "eva/Core.h"
-
-#include <memory>
 
 namespace Eva {
 

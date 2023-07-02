@@ -7,8 +7,8 @@
 
 #pragma once
 
-#include "RendererAPI.h"
 #include "eva/Core.h"
+#include "RendererAPI.h"
 
 namespace Eva {
 

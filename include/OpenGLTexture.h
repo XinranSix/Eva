@@ -5,7 +5,7 @@
  * @version :   1.0
  */
 
-#include <stdint.h>
+#include <cstdint>
 
 #include "Texture.h"
 

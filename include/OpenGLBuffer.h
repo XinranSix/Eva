@@ -7,8 +7,9 @@
 
 #pragma once
 
-#include "Buffer.h"
 #include <iostream>
+
+#include "Buffer.h"
 
 namespace Eva {
 

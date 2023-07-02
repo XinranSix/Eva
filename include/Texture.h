@@ -7,8 +7,8 @@
 
 #pragma once
 
-#include <stdint.h>
 #include <string>
+#include <cstdint>
 
 #include "eva/Core.h"
 

@@ -9,17 +9,17 @@
 
 #include <memory>
 
-#include "Window.h"
-#include "eva/eva.h"
-#include "ApplicationEvent.h"
 #include "Layer.h"
-#include "LayerStack.h"
-#include "ImGuiLayer.h"
 #include "Shader.h"
 #include "Buffer.h"
-#include "VertexArray.h"
-#include "OrthographicCamera.h"
+#include "Window.h"
+#include "eva/eva.h"
 #include "Timestep.h"
+#include "LayerStack.h"
+#include "ImGuiLayer.h"
+#include "VertexArray.h"
+#include "ApplicationEvent.h"
+#include "OrthographicCamera.h"
 
 namespace Eva {
     class Application {

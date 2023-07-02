@@ -5,14 +5,15 @@
  * @version :   1.0
  */
 
+#include <memory>
+#include <cstdint>
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <memory>
-#include <stdint.h>
 
-#include "Application.h"
 #include "SandBoxApp.h"
 #include "eva/Assert.h"
+#include "Application.h"
 
 namespace Eva {
 

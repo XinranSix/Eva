@@ -7,9 +7,10 @@
 
 #pragma once
 
-#include "eva/Core.h"
-#include "Event.h"
 #include <functional>
+
+#include "Event.h"
+#include "eva/Core.h"
 
 namespace Eva {
 

@@ -7,11 +7,12 @@
 
 #pragma once
 
-#include <glm/glm.hpp>
 #include <memory>
 
-#include "VertexArray.h"
+#include <glm/glm.hpp>
+
 #include "eva/Core.h"
+#include "VertexArray.h"
 
 namespace Eva {
 

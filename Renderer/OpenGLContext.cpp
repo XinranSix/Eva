@@ -8,9 +8,9 @@
 // #include <GLFW/glfw3.h>
 #include <glad/glad.h>
 
-#include "Renderer/OpenGLContext.h"
-#include "eva/Assert.h"
 #include "Log.h"
+#include "eva/Assert.h"
+#include "Renderer/OpenGLContext.h"
 
 namespace Eva {
 

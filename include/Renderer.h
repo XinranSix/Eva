@@ -7,10 +7,10 @@
 
 #pragma once
 
-#include "RenderCommand.h"
-#include "OrthographicCamera.h"
 #include "Shader.h"
 #include "eva/Core.h"
+#include "RenderCommand.h"
+#include "OrthographicCamera.h"
 
 namespace Eva {
 

@@ -13,8 +13,8 @@
 
 #include "Shader.h"
 #include "Renderer.h"
-#include "OpenGLShader.h"
 #include "eva/Assert.h"
+#include "OpenGLShader.h"
 
 namespace Eva {
 

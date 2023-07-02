@@ -7,10 +7,10 @@
 
 #pragma once
 
-#include <initializer_list>
-#include <stdint.h>
 #include <vector>
 #include <string>
+#include <cstdint>
+#include <initializer_list>
 
 #include "eva/Assert.h"
 

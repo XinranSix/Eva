@@ -8,11 +8,11 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-#include "WindowWindow.h"
 #include "Log.h"
-#include "eva/Assert.h"
 #include "KeyEvent.h"
+#include "eva/Assert.h"
 #include "MouseEvent.h"
+#include "WindowWindow.h"
 #include "ApplicationEvent.h"
 
 namespace Eva {

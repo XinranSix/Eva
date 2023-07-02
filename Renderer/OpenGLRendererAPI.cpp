@@ -6,10 +6,11 @@
  */
 
 #include <cstddef>
-#include <glad./glad.h>
 
-#include "OpenGLRendererAPI.h"
+#include <glad/glad.h>
+
 #include "eva/Core.h"
+#include "OpenGLRendererAPI.h"
 
 namespace Eva {
 

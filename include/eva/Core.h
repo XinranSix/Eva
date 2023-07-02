@@ -8,9 +8,9 @@
 
 #pragma once
 
-#include "eva.h"
-
 #include <memory>
+
+#include "eva.h"
 
 #define BIT(x) (1 << x)
 

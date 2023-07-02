@@ -9,12 +9,9 @@
 #include <GLFW/glfw3.h>
 
 #include "ImGuiLayer.h"
-// #include "imgui.h"
+#include "Application.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
-// #include "imgui.h"
-#include "Application.h"
-// #include "eva/Core.h"
 
 namespace Eva {
 

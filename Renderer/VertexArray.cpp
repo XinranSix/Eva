@@ -5,8 +5,8 @@
  * @version :   1.0
  */
 
-#include "VertexArray.h"
 #include "Renderer.h"
+#include "VertexArray.h"
 #include "OpenGLVertexArray.h"
 
 namespace Eva {

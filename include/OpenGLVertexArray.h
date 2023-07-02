@@ -8,11 +8,11 @@
 #pragma once
 
 #include <memory>
-#include <stdint.h>
 #include <vector>
+#include <cstdint>
 
-#include "VertexArray.h"
 #include "eva/Core.h"
+#include "VertexArray.h"
 
 namespace Eva {
 

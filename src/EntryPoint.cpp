@@ -6,8 +6,8 @@
  * Engin Entry Point
  */
 
-#include "Application.h"
 #include "Log.h"
+#include "Application.h"
 
 // extern GameEngine::Application *GameEngine::CreateApplication();
 

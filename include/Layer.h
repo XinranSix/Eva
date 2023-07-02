@@ -7,8 +7,8 @@
 
 #pragma once
 
-#include "eva/eva.h"
 #include "Event.h"
+#include "eva/eva.h"
 #include "Timestep.h"
 
 namespace Eva {

@@ -7,9 +7,10 @@
 
 #pragma once
 
+#include <sstream>
+
 #include "Event.h"
 #include "eva/MouseCodes.h"
-#include <sstream>
 
 namespace Eva {
 

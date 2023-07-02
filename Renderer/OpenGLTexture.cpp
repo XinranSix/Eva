@@ -8,8 +8,8 @@
 #include <glad/glad.h>
 
 #include "stb_image.h"
-#include "OpenGLTexture.h"
 #include "eva/Assert.h"
+#include "OpenGLTexture.h"
 
 namespace Eva {
 
