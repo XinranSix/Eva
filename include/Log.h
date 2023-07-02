@@ -7,10 +7,11 @@
 
 #pragma once
 
-#include "eva/Core.h"
-
 #include <memory>
+
 #include <spdlog/spdlog.h>
+
+#include "eva/Core.h"
 
 namespace Eva {
     class Log {

@@ -21,6 +21,7 @@
 #include "KeyCodes.h"
 #include "OpenGLShader.h"
 #include "Texture.h"
+#include "Shader.h"
 
 // FIXME:示例 Layer
 class ExampleLayer : public Eva::Layer {
@@ -88,7 +89,8 @@ public:
             }
         )";
 
-        m_Shader.reset(Eva::Shader::Create(vertexSrc, fragmentSrc));
+        m_Shader =
+            Eva::Shader::Create("VertexPosColor", vertexSrc, fragmentSrc);
 
         // Shader::Create("shaders/Texture.glsl");
 
@@ -141,10 +143,10 @@ public:
             }
         )";
 
-        m_FlatColorShader.reset(Eva::Shader::Create(
-            flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
+        m_FlatColorShader = Eva::Shader::Create(
+            "FlatColor", flatColorShaderVertexSrc, flatColorShaderFragmentSrc);
 
-        m_TextureShader.reset(Eva::Shader::Create("shaders/Texture.glsl"));
+        auto textureShader = m_ShaderLibrary.Load("shaders/Texture.glsl");
 
         m_Texture =
             Eva::Texture2D::Create("./assets/textures/Checkerboard.png");
@@ -152,8 +154,8 @@ public:
         m_ChernoLogTexture =
             Eva::Texture2D::Create("./assets/textures/ChernoLogo.png");
 
-        std::dynamic_pointer_cast<Eva::OpenGLShader>(m_TextureShader)->Bind();
-        std::dynamic_pointer_cast<Eva::OpenGLShader>(m_TextureShader)
+        std::dynamic_pointer_cast<Eva::OpenGLShader>(textureShader)->Bind();
+        std::dynamic_pointer_cast<Eva::OpenGLShader>(textureShader)
             ->UploadUniformInt("u_Texture", 0);
     }
 
@@ -212,11 +214,13 @@ public:
             }
         }
 
+        auto textureShader = m_ShaderLibrary.Get("Texture");
+
         m_Texture->Bind();
-        Eva::Renderer::Submit(m_TextureShader, m_SquareVA,
+        Eva::Renderer::Submit(textureShader, m_SquareVA,
                               glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
         m_ChernoLogTexture->Bind();
-        Eva::Renderer::Submit(m_TextureShader, m_SquareVA,
+        Eva::Renderer::Submit(textureShader, m_SquareVA,
 
                               glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
@@ -232,10 +236,11 @@ public:
     void OnEvent(Eva::Event &event) override {}
 
 private:
+    Eva::ShaderLibrary m_ShaderLibrary;
     Eva::Ref<Eva::Shader> m_Shader;
     Eva::Ref<Eva::VertexArray> m_VertexArray;
 
-    Eva::Ref<Eva::Shader> m_FlatColorShader, m_TextureShader;
+    Eva::Ref<Eva::Shader> m_FlatColorShader;
     Eva::Ref<Eva::VertexArray> m_SquareVA;
 
     Eva::Ref<Eva::Texture2D> m_Texture, m_ChernoLogTexture;
