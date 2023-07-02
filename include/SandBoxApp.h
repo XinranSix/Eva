@@ -160,36 +160,7 @@ public:
 
     void OnUpdate(Eva::Timestep ts) override {
 
-        if (Eva::Input::IsKeyPressed(EVA_KEY_LEFT)) {
-            m_CameraPosition.x -= m_CameraMoveSpeed * ts;
-        } else if (Eva::Input::IsKeyPressed(EVA_KEY_RIGHT)) {
-            m_CameraPosition.x += m_CameraMoveSpeed * ts;
-        }
-
-        if (Eva::Input::IsKeyPressed(EVA_KEY_UP)) {
-            m_CameraPosition.y += m_CameraMoveSpeed * ts;
-        } else if (Eva::Input::IsKeyPressed(EVA_KEY_DOWN)) {
-            m_CameraPosition.y -= m_CameraMoveSpeed * ts;
-        }
-
-        if (Eva::Input::IsKeyPressed(EVA_KEY_A)) {
-            m_CameraRotation += m_CameraRotationSpeed * ts;
-        } else if (Eva::Input::IsKeyPressed(EVA_KEY_D)) {
-            m_CameraRotation -= m_CameraRotationSpeed * ts;
-        }
-
-        if (Eva::Input::IsKeyPressed(EVA_KEY_J)) {
-            m_SquarePosition.x -= m_SquareMoveSpeed * ts;
-        } else if (Eva::Input::IsKeyPressed(EVA_KEY_L)) {
-            m_SquarePosition.x += m_SquareMoveSpeed * ts;
-        }
-
-        if (Eva::Input::IsKeyPressed(EVA_KEY_I)) {
-            m_SquarePosition.y += m_SquareMoveSpeed * ts;
-        } else if (Eva::Input::IsKeyPressed(EVA_KEY_K)) {
-            m_SquarePosition.y -= m_SquareMoveSpeed * ts;
-        }
-
+       
         Eva::RenderCommand::SetClearColor({0.1f, 0.1f, 0.1f, 1.00f});
         Eva::RenderCommand::Clear();
 
