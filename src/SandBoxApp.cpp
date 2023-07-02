@@ -11,7 +11,6 @@
 
 SandBox::SandBox() {
     // PushLayer(new ExampleLayer());
-    // PushLayer(new SandBox2D());
     PushOverlay(new SandBox2D());
 }
 

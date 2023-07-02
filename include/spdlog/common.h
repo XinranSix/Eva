@@ -386,7 +386,7 @@ SPDLOG_CONSTEXPR_FUNC std::basic_string_view<T> to_string_view(std::basic_format
 
 #if __cplusplus >= 201402L // C++14 and beyond
 using std::enable_if_t;
-using std::make_unique;
+using Scope;
 #else
 template<bool B, class T = void>
 using enable_if_t = typename std::enable_if<B, T>::type;

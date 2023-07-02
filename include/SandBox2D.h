@@ -31,6 +31,7 @@ private:
     Eva::Ref<Eva::VertexArray> m_SquareVA;
     Eva::Ref<Eva::Shader> m_FlatColorShader;
 
-    Eva::Ref<Eva::Texture2D> m_Texture;
+    Eva::Ref<Eva::Texture2D> m_CheckerboardTexture;
+
     glm::vec4 m_SquareColor = {0.2f, 0.3f, 0.8f, 1.0f};
 };
