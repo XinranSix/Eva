@@ -21,13 +21,12 @@
 #include "Application.h"
 #include "OpenGLShader.h"
 #include "ApplicationEvent.h"
+#include "OrthographicCameraController.h"
 
 // FIXME:示例 Layer
 class ExampleLayer : public Eva::Layer {
 public:
-    ExampleLayer()
-        : Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f),
-          m_CameraPosition(0.0f), m_SquarePosition(0.0f) {
+    ExampleLayer() : Layer("Example"), m_CameraController(1280.0f / 720.f) {
 
         m_VertexArray.reset(Eva::VertexArray::Create());
 
@@ -160,23 +159,12 @@ public:
 
     void OnUpdate(Eva::Timestep ts) override {
 
-       
+        m_CameraController.OnUpdate(ts);
+
         Eva::RenderCommand::SetClearColor({0.1f, 0.1f, 0.1f, 1.00f});
         Eva::RenderCommand::Clear();
 
-        m_Camera.SetPosition(m_CameraPosition);
-        m_Camera.SetRotation(m_CameraRotation);
-
-        Eva::Renderer::BeginScene(m_Camera);
-
-        /* ------------------------------------------------------------------ */
-        // Eva::Renderer::BeginScene(m_Scene);
-        // Eva::Renderer::BeginScene(m_Scene2D);
-        // Eva::Renderer::BeginScene(m_Scene2D);
-        // Eva::Renderer::DrawQuad();
-        // Eva::Renderer::DrawRect();
-        // Eva::Renderer::BeginScene2D(m_Camera);
-        /* ------------------------------------------------------------------ */
+        Eva::Renderer::BeginScene(m_CameraController.GetCamera());
 
         static glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
@@ -212,7 +200,9 @@ public:
         ImGui::End();
     }
 
-    void OnEvent(Eva::Event &event) override {}
+    void OnEvent(Eva::Event &event) override {
+        m_CameraController.OnEvent(event);
+    }
 
 private:
     Eva::ShaderLibrary m_ShaderLibrary;
@@ -224,16 +214,7 @@ private:
 
     Eva::Ref<Eva::Texture2D> m_Texture, m_ChernoLogTexture;
 
-    Eva::OrthographicCamera m_Camera;
-    glm::vec3 m_CameraPosition;
-
-    float m_CameraMoveSpeed = 5.0f;
-    float m_CameraRotation = 0.0f;
-    float m_CameraRotationSpeed = 180.0f;
-
-    glm::vec3 m_SquarePosition;
-    float m_SquareMoveSpeed = 1.0f;
-
+    Eva::OrthographicCameraController m_CameraController;
     glm::vec3 m_SquareColor = {0.2f, 0.3f, 0.8f};
 };
 
